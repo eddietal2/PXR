@@ -264,7 +264,7 @@ getBrightnessMode();
       <div class="col-span-1 content-center">
         <img class="h-4 md:h-7 inline relative bottom-1 ml-3 lg:mr-1 lg:ml-0 " src={fireEmoji} alt="">
         <b class="text-md">
-          EDDIE TALIAFERRO II
+          PARADIGM XR
         </b>
       </div>
       <div class="hidden md:block col-span-1 content-center">
