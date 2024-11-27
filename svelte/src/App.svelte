@@ -270,14 +270,6 @@ getBrightnessMode();
         <!-- Space that goes in between both sides -->
       </div>
       <div class="col-span-1 text-right">
-        <!-- Github -->
-        <a class="mx-1" href="https://github.com/eddietal2" target="_blank" aria-label="Github Link">
-            <ion-icon class="text-3xl p-0.5" name="logo-github" ></ion-icon>
-        </a>
-        <!-- LinkedIn -->
-        <a class="mx-1" href="https://www.linkedin.com/in/eddie-taliaferro-ii/" target="_blank" aria-label="LinkedIn Link">
-            <ion-icon class="text-3xl p-0.5" name="logo-linkedin" ></ion-icon>
-        </a>
         <!-- Contact Me -->
         <a class="mx-1" href="#section-4"  aria-label="Contact Me Link">
             <ion-icon class="text-3xl p-0.5" name="mail-outline" ></ion-icon>
@@ -331,39 +323,27 @@ getBrightnessMode();
     <!-- Landing Intro -->
     <section data-current-section="s1">
       <div id="section-1" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>
-        <div class="md:w-4/5 lg:w-3/5 mx-auto lg:flex flex-row gap-20">
+        <div class="md:w-4/5 lg:w-3/5 mx-auto lg:flex flex-row gap-4">
           <!-- Picture -->
-          <div class="w-11/12 h-96 lg:w-2/4 mx-auto">
-            <h1>3D Models</h1>
-            <model-viewer src="https://ik.imagekit.io/je4p51xox/3D%20Models/ImageToStl.com_quest_2.glb?updatedAt=1732723004698" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
+          <div class="w-11/12 h-96 lg:w-2/4 mx-auto bg-[#9999990] content-center">
+            <model-viewer class="mx-auto scale-150" src="https://ik.imagekit.io/je4p51xox/3D%20Models/Iphone%2016.glb?updatedAt=1732723696664" shadow-intensity="1" camera-controls></model-viewer>
           </div>
           <!-- Text -->
-          <div class="w-11/12 lg:w-2/4 mx-auto">
+          <div class="w-11/12 lg:w-2/4 mx-auto bg-[#9999990]">
             <p class="landing-text">
-              <span class="text-xl lg:text-4xl text-[#111] dark:text-white">
-                <img class="fire-anim h-10 inline" src={fireEmoji} alt="Fire Emoji">
-                  <b class={brightnessMode === "LIGHT" ? lightText : darkText}>
-                    <span class="greetings-anim-1 inline-block">HI,</span>
-                    <span class="greetings-anim-2 inline-block">I'M</span>
-                    <span class="greetings-anim-3 inline-block">EDDIE!</span>
-                  </b> 
+              <span class="text-xl lg:text-3xl text-[#111] dark:text-white">
+                <b class={brightnessMode === "LIGHT" ? lightText : darkText}>
+                  <span class="greetings-anim-1 inline-block">NEED XR?</span>
+                  <span class="greetings-anim-2 inline-block">WE</span>
+                  <span class="greetings-anim-3 inline-block">GOT YOU.</span>
+                </b> 
               </span>
               <br>
-              <span class="sm:text-xl xl:text-2xl block my-4">
+              <span class="sm:text-xl xl:text-xl block my-4">
                 <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
                   As a versatile developer and designer, I specialize in turning innovative ideas into tangible software. 
                   From web applications to immersive XR experiences, my expertise spans web development, responsive design, CSS & SVG animation, UI/UX design, and even video game development using Unreal Engine. With a focus on creating high-performing and effective software, I've successfully delivered MVPs and beyond on numerous projects.
                 </span>
-              </span>
-              <br>
-              <span class="text-xl text-[#111] dark:text-[#ffcb0a] font-bold">
-                <span class={brightnessMode === "LIGHT" ? lightText : darkText}>SKILLS</span>
-              </span>
-              <span class="text-sm lg:text-xl bg-[#ffcb0a10] border-[#ffcb0a40] border-2 p-2 block sm:my-2">
-                <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
-                  Angular, SvelteKit, Ionic, TailWindCSS, Linux, Git, Figma, Unreal Engine
-                </span>
-              </span>
           </p>
           </div>
         </div>
