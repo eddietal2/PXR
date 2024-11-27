@@ -326,7 +326,7 @@ getBrightnessMode();
         <div class="md:w-4/5 lg:w-3/5 mx-auto lg:flex flex-row gap-4">
           <!-- Picture -->
           <div class="w-11/12 h-96 lg:w-2/4 mx-auto bg-[#9999990] content-center">
-            <model-viewer class="mx-auto scale-150" src="https://ik.imagekit.io/je4p51xox/3D%20Models/Iphone%2016.glb?updatedAt=1732723696664" shadow-intensity="1" camera-controls></model-viewer>
+            <model-viewer class="mx-auto scale-150" auto-rotate src="https://ik.imagekit.io/je4p51xox/3D%20Models/hero-animation.glb?updatedAt=1732733617454" shadow-intensity="1" camera-controls></model-viewer>
           </div>
           <!-- Text -->
           <div class="w-11/12 lg:w-2/4 mx-auto bg-[#9999990]">
