@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "flowbite": "^2.5.2",
+    "svelte-routing": "^2.13.0",
     "swiper": "^11.1.15"
   }
 }

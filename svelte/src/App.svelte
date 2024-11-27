@@ -262,7 +262,6 @@ getBrightnessMode();
   <div class={brightnessMode === "LIGHT" ? lightNav : darkNav}>
     <div class="md:w-4/5 lg:w-3/5 mx-auto grid grid-cols-2 md:grid-cols-3">
       <div class="col-span-1 content-center">
-        <img class="h-4 md:h-7 inline relative bottom-1 ml-3 lg:mr-1 lg:ml-0 " src={fireEmoji} alt="">
         <b class="text-md">
           PARADIGM XR
         </b>
@@ -307,7 +306,7 @@ getBrightnessMode();
     </div>
   </div>
 
-  <!-- Section Nav -->
+  <!-- Section Nav (Desktop) -->
   <nav id="sectionation-lg">
     <ul>
         <li>
@@ -334,11 +333,12 @@ getBrightnessMode();
       <div id="section-1" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>
         <div class="md:w-4/5 lg:w-3/5 mx-auto lg:flex flex-row gap-20">
           <!-- Picture -->
-          <div class="w-11/12 lg:w-1/4 mx-auto">
-            <div id="header-pic" class="my-4"></div>
+          <div class="w-11/12 h-96 lg:w-2/4 mx-auto">
+            <h1>3D Models</h1>
+            <model-viewer src="https://ik.imagekit.io/je4p51xox/3D%20Models/ImageToStl.com_quest_2.glb?updatedAt=1732723004698" shadow-intensity="1" camera-controls touch-action="pan-y"></model-viewer>
           </div>
           <!-- Text -->
-          <div class="w-11/12 lg:w-3/4 mx-auto">
+          <div class="w-11/12 lg:w-2/4 mx-auto">
             <p class="landing-text">
               <span class="text-xl lg:text-4xl text-[#111] dark:text-white">
                 <img class="fire-anim h-10 inline" src={fireEmoji} alt="Fire Emoji">
