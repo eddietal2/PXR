@@ -2,57 +2,16 @@
   import { onMount } from 'svelte';
   import { Popover } from 'flowbite';
 
-  // Icons
-  import fireEmoji from './assets/icons/fire.png'
-
-  // My Story Images
-  import slidePhotoOne from './assets/photos/Photo_5.png'
-  import slidePhotoTwo from './assets/photos/Photo_4.png'
-  import slidePhotoThree from './assets/photos/Photo_1.png'
-  import slidePhotoFour from './assets/photos/Photo_2.png'
-  import slidePhotoFive from './assets/photos/Photo_3.png'
-  import slidePhotoSix from './assets/photos/insta_1.png'
-  import slidePhotoSeven from './assets/photos/insta_2.png'
-
-  // Hero Section SVG Art
-  import headerArtPic from './assets/illustrations/header-art-pic.svg'
-
   let projects = [
         {
             "name": "HARP",
             "image": "https://ik.imagekit.io/2ax1lblqa/Slice_1__1_-removebg-preview.png?updatedAt=1732343747682",
+            "video": "VR Developer",
             "role": "VR Developer",
             "type": "Professional",
             "link": "https://www.harp-rose.org/",
             "text": "VR Enhanced Therapy, powered by Unreal Engine.",
             "description": "VR Startup that aims to make therapy more accessible and innovative. I am the lead software developer for this MVP. This is being built with Unreal Engine 5, while I outsource things like 3D Model creation, audio, etc."
-        },
-        {
-            "name": "Crypto Tutors",
-            "image": "https://ik.imagekit.io/2ax1lblqa/ctlogo.png?updatedAt=1732316143920",
-            "role": "Senior Front End Developer",
-            "type": "Professional",
-            "link": "https://www.defiallodds.xyz/",
-            "text": "DefiAllOdds, powered by Web3 Education startup CryptoTutors.",
-            "description": "Crypto Tutors is a leading provider of engaging and accessible Web3 education. Our award-winning curriculum, trusted by Fortune 500 companies and recognized by the National Science Foundation. I built the Defi All Odds assessment with SvelteKit and TailwindCSS. I fell in love with both."
-        },
-        {
-            "name": "VOpposition",
-            "image": "https://ik.imagekit.io/2ax1lblqa/vopposition-logomark-red.png?updatedAt=1732316143809",
-            "role": "Senior Front End Developer",
-            "type": "Professional",
-            "link": "https://www.vopposition.com/",
-            "text": "Gamified sports matchmaking, Hybrid App, Web App focus with MVP",
-            "description": "A matchmaking app for pick up sports, like Basketball, Volleyball, etc, with gamified features. I acted as a Front End Engineer and UX Designer, refining the UX as I translated assets from the Design team to front end code. Built with Angular, Ionic, and TailwindCSS."
-        },
-        {
-            "name": "Final Boss Studios",
-            "image": "https://ik.imagekit.io/2ax1lblqa/fbs_logo.png?updatedAt=1732316143932",
-            "role": "Web Developer / Co-Founder",
-            "type": "Professional",
-            "link": "https://www.finalbossxr.com/",
-            "text": "This is text",
-            "description": "This is a Video Game & Augmented Reality Studio that I co-founded in 2021. I also act as Web Developer and Game Designer for our team while we build our first IP, Cosmic Collisions. I remade this site with SvelteKit & TailwindCSS"
         }
       ]
   /**
@@ -105,14 +64,14 @@ getBrightnessMode();
   // Light Mode
   let lightNav = 'backdrop-blur-lg bg-[#fff]/30 h-16 drop-shadow-lg fixed w-full bottom-0 md:top-0 content-center z-50 transition duration-150';
   let lightText = 'text-black transition duration-150';
-  let lightHeader = 'text-3xl text-black font-bold transition duration-150';
+  let lightHeader = 'text-[#fff] bg-[#111] text-6xl font-bold transition duration-150';
   let lightBG = 'bg-[#fff] content-center transition duration-150';
   let lightButton = 'bg-[#00000020] text-[#1cb6fc] hover:bg-[#dd0000] hover:text-[#ffd24d] transition duration-1 p-0.5';
 
   // Dark Mode
   let darkNav = 'backdrop-blur-lg text-white bg-[#000]/70 h-16 drop-shadow-lg fixed w-full bottom-0 md:top-0 content-center z-50 transition duration-150';
   let darkText = 'text-white transition duration-150';
-  let darkHeader = 'text-3xl text-white font-bold transition duration-150';
+  let darkHeader = 'text-[#111] bg-[#fff] text-6xl font-bold transition duration-150';
   let darkBG = 'bg-[#222] content-center transition duration-150';
   let darkButton = 'bg-[#ffffff20] text-[#1cb6fc] hover:bg-[#dd0000] hover:text-[#ffd24d] transition duration-1 p-0.5';
 
@@ -273,32 +232,36 @@ getBrightnessMode();
     <section data-current-section="s1">
       <div id="section-1" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>
         <div class="md:w-4/5 lg:w-3/5 mx-auto lg:flex flex-row gap-20">
-          <!-- Picture -->
-          <div class="w-11/12 h-96 lg:w-2/4 mx-auto bg-[#9999990] content-center">
+          <!-- 3D Models -->
+          <div class="w-full lg:w-2/4 mx-auto bg-[#9999990] content-center">
             <model-viewer 
               id="xr-devices-hero"
-              class="mx-auto relative bottom-10" 
-              style="transform: scale(3);" 
+              class="mx-auto relative bottom-10 h-[400px]" 
               auto-rotate 
               rotation-per-second="50deg"
               auto-rotate-delay="3000"
-              src="https://ik.imagekit.io/je4p51xox/3D%20Models/hero-animation.glb?updatedAt=1732733617454"
+              min-camera-orbit="0deg 75deg 10%"
+              src="https://ik.imagekit.io/je4p51xox/3D%20Models/hero-anim.glb?updatedAt=1732760517360"
               
               >
             </model-viewer>
           </div>
           <!-- Text -->
           <div class="w-11/12 lg:w-2/4 mx-auto bg-[#9999990]">
+            <h1 class={brightnessMode === "LIGHT" ? lightHeader : darkHeader}>
+              PARADIGM XR
+            </h1>
+            <div class="my-2"></div>
             <p class="landing-text">
-              <span class="text-xl lg:text-3xl text-[#111] dark:text-white">
-                <b class={brightnessMode === "LIGHT" ? lightText : darkText}>
+              <span class="text-xl lg:text-3xl ">
+                <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
                   <span class="greetings-anim-1 inline-block">NEED XR?</span>
                   <span class="greetings-anim-2 inline-block">WE</span>
                   <span class="greetings-anim-3 inline-block">GOT YOU.</span>
-                </b> 
+                </span> 
               </span>
               <br>
-              <span class="sm:text-xl xl:text-lg block my-4">
+              <span class="sm:text-xl xl:text-xl block my-4">
                 <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
                   As a versatile developer and designer, I specialize in turning innovative ideas into tangible software. 
                   From web applications to immersive XR experiences, my expertise spans web development, responsive design, CSS & SVG animation, UI/UX design, and even video game development using Unreal Engine. With a focus on creating high-performing and effective software, I've successfully delivered MVPs and beyond on numerous projects.
@@ -309,26 +272,23 @@ getBrightnessMode();
       </div>
     </section>
     
-    <!-- My Story -->
+    <!-- Our Services-->
     <section data-current-section="s2">
       <div id="section-2" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>
         <div class="md:w-4/5 lg:w-3/5 p-4 mx-auto md:flex flex-row gap-8">
-          <!-- Text -->
+          <!-- Header -->
           <div class="w-11/12 lg:w-2/4 mt-20 md:mt-0">
               <h1 class={brightnessMode === "LIGHT" ? lightHeader : darkHeader}>
-                <span class="h-10 mr-2">📖</span>
-                MY STORY
+                OUR SERVICES
               </h1>
-              <p style="margin-top: 1em;" class={brightnessMode === "LIGHT" ? lightText : darkText}>
-                My passion for video games, anime, and graphic design began at 11, igniting a creative spark. Online forums like Playstation Universe became my playground for crafting custom signatures. This passion led me to pursue web development, fueled by hackathon victories, bootcamps, teaching, and freelance projects since 2017.
-                <br>
-                <br>
-                Giving back has been equally fulfilling. For four years, I taught Detroit's youth to code through Journi, a non-profit. This experience not only helped my students grow but also refined my own skills. It was an honor and an act of love for my city.
-              </p>
           </div>
-          <!-- Photo Side -->
+          <!-- Services -->
           <div class="w-11/12 lg:w-2/4 content-center">
-           <h1>Put something here later</h1>
+            <ul class={brightnessMode === "LIGHT" ? lightText : darkText}>
+              <li>VR, AR, and MR Development</li>
+              <li>Web Development</li>
+              <li>Consultation</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -340,33 +300,19 @@ getBrightnessMode();
         <!-- Header -->
         <div class="md:w-4/5 lg:w-3/5 p-4 mx-auto lg:mb-4 content-center">
           <h1 class={brightnessMode === "LIGHT" ? lightHeader : darkHeader}>
-            <span class="h-10 mr-2">💻</span>
             PROJECTS
           </h1>
-         <span class="text-lg lg:text-xl">
-          <p class={brightnessMode === "LIGHT" ? lightText : darkText}>
-            Here are some projects (that I can share), ranging from personal projects that I have worked on, or startups I have built MVPs or major features for.
-            You can view more of my projects via <a class="text-[#3686fd] pb-0.5 underline" href="https://github.com/eddietal2">Github</a>.
-          </p>
-         </span>
         </div>
         <!-- Project -->
-        <div class="md:w-4/5 lg:w-3/5 p-4 gap-8 mx-auto lg:grid grid-cols-2">
+        <div class="md:w-4/5 lg:w-3/5 p-4 gap-8 mx-auto">
           {#each projects as project, index}
-            <div class="flex flex-row gap-2  p-2 my-2 lg:my-0">
-              <!-- Project Image -->
-              <img src={project.image} class="h-12" alt="Project Logo">
-              <div class="content-center">
-                <!-- Project Card Text -->
+            <div class="flex flex-row gap-2 p-2 my-2 lg:my-0">
+              <div class="content-center w-full bg-[#dd000010]">
+                <img src={project.image} class="h-24" alt="Project Logo">
+                
                 <span class="text-xs">
                   <p class={brightnessMode === "LIGHT" ? lightText : darkText}>{project.name}</p>
                 </span>
-                <span class="text-xs">
-                  <p class={brightnessMode === "LIGHT" ? lightText : darkText}>{project.role} / 2023 - 2024</p>
-                </span>
-                <p style="font-size: 1.2em;" class={brightnessMode === "LIGHT" ? lightText : darkText}>
-                  {project.text}
-                </p>
                 <!-- Link & Description Buttons -->
                 <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
                   <button class={brightnessMode === "LIGHT" ? lightButton : darkButton}>
@@ -383,13 +329,22 @@ getBrightnessMode();
                   </div>
                 </span>
               </div>
+              <div class="content-center w-full bg-[#00ff0010]">
+                <!-- Project Card Text -->
+                <span class="text-xs">
+                  <p class={brightnessMode === "LIGHT" ? lightText : darkText}>{project.role} / 2023 - 2024</p>
+                </span>
+                <p style="font-size: 1.2em;" class={brightnessMode === "LIGHT" ? lightText : darkText}>
+                  {project.text}
+                </p>
+              </div>
             </div>
           {/each }
         </div>
       </div>
     </section>
 
-    <!-- Contact Me -->
+    <!-- Contact Us -->
     <section data-current-section="s4">
       <div id="section-4" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>
         <div class="md:w-4/5 lg:w-3/5 mx-auto mb-8">
@@ -426,9 +381,9 @@ getBrightnessMode();
 
 <style>
 /* Greetings Animation */
-.fire-anim {
-  opacity: 0;
-  animation: fire-slide 500ms cubic-bezier(0.075, 0.82, 0.165, 1) 750ms forwards;
+.color-header {
+  display: inline-block;
+  padding: 0.2em;
 }
 .greetings-anim-1 {
   opacity: 0;
