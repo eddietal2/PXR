@@ -231,17 +231,18 @@ getBrightnessMode();
     <!-- Landing Intro -->
     <section data-current-section="s1">
       <div id="section-1" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>
-        <div class="md:w-4/5 lg:w-3/5 mx-auto lg:flex flex-row gap-20">
+        <div class="md:w-4/5 lg:w-3/5 mx-auto lg:flex flex-row gap-10">
           <!-- 3D Models -->
           <div class="w-full lg:w-2/4 mx-auto bg-[#9999990] content-center">
             <model-viewer 
               id="xr-devices-hero"
               class="mx-auto relative bottom-10 h-[400px]" 
+              style="transform: scale(1.3)"
               auto-rotate 
               rotation-per-second="50deg"
               auto-rotate-delay="3000"
               min-camera-orbit="0deg 75deg 10%"
-              src="https://ik.imagekit.io/je4p51xox/3D%20Models/hero-anim.glb?updatedAt=1732760517360"
+              src="https://ik.imagekit.io/je4p51xox/3D%20Models/hero-anim.glb?updatedAt=1732764059609"
               
               >
             </model-viewer>
