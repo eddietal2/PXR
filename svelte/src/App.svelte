@@ -93,13 +93,13 @@ getBrightnessMode();
           // console.log(activeSection);
           // Active Section, red square
           bullet.innerHTML = `<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="10" height="10" fill="#dd0000"/>
+                <rect width="10" height="10" fill="#2581ff"/>
               </svg>`
         } else {
           // Inactive Section, white circle.
           bullet.innerHTML = `
               <svg width="10" height="10" viewBox="0 0 10 10" fill="#000" xmlns="http://www.w3.org/2000/svg"> 
-                <circle cx="5" cy="5" r="5" fill="#ffffff50"/>
+                <circle cx="5" cy="5" r="5" fill="#999"/>
               </svg>`
         }
       });
@@ -162,8 +162,8 @@ getBrightnessMode();
   <div class={brightnessMode === "LIGHT" ? lightNav : darkNav}>
     <div class="md:w-4/5 lg:w-3/5 mx-auto grid grid-cols-2 md:grid-cols-3">
       <div class="col-span-1 content-center">
-        <b class="text-md">
-          P/XR
+        <b class="text-2xl">
+          PXR
         </b>
       </div>
       <div class="hidden md:block col-span-1 content-center">
@@ -203,8 +203,8 @@ getBrightnessMode();
   </div>
 
   <!-- Section Nav (Desktop) -->
-  <nav id="sectionation-lg">
-    <ul>
+  <nav id="sectionation-lg" class={brightnessMode === "LIGHT" ? darkBG : lightBG}>
+    <ul >
         <li>
             <div class="nav-bullet" data-current-section="s1" aria-label="First Section">
               
@@ -250,7 +250,7 @@ getBrightnessMode();
             <div class="my-2"></div>
             <p class="landing-text">
               <span class="text-xl lg:text-3xl">
-                <span class='text-[#BB0000] font-bold'>
+                <span class='text-[#2581ff] font-bold'>
                   <span class="greetings-anim-1 inline-block">NEED XR?</span>
                   <span class="greetings-anim-2 inline-block">WE</span>
                   <span class="greetings-anim-3 inline-block">GOT YOU.</span>
@@ -262,7 +262,8 @@ getBrightnessMode();
                   As a versatile developer and designer, I specialize in turning innovative ideas into tangible software. 
                   From web applications to immersive XR experiences, my expertise spans web development, responsive design, CSS & SVG animation, UI/UX design, and even video game development using Unreal Engine. With a focus on creating high-performing and effective software, I've successfully delivered MVPs and beyond on numerous projects.
                 </span>
-          </p>
+            </p>
+            <a href="#section-4" class="text-[#2581ff] border-2 border-[#2581ff] p-2 font-bold">CONTACT US</a>
           </div>
         </div>
       </div>
@@ -420,7 +421,6 @@ getBrightnessMode();
 /* Snap Scrolling Indicator */
 #sectionation-lg {
     /* background: #b1b1b153; */
-    background: #191123;
     z-index: 9999;
     width: auto;
     height: auto;
