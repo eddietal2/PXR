@@ -91,9 +91,9 @@ getBrightnessMode();
       navBullets.forEach((bullet: any) => {
         if (bullet.dataset.currentSection === activeSection) {
           // console.log(activeSection);
-          // Active Section, orange square
+          // Active Section, red square
           bullet.innerHTML = `<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="10" height="10" fill="#f56f33"/>
+                <rect width="10" height="10" fill="#dd0000"/>
               </svg>`
         } else {
           // Inactive Section, white circle.
@@ -152,14 +152,6 @@ getBrightnessMode();
           popover.hide();
         }, 10000);
       }
-
-      // For testing purposes
-      // localStorage.removeItem(storageKey);
-      // console.log(popoverEl);
-      // console.log(today);
-      // console.log(storageKey);
-      // console.log(hasShownToday);
-      // console.log('Local Storage: ' + localStorage);   
     }
 
   });
@@ -177,15 +169,19 @@ getBrightnessMode();
       <div class="hidden md:block col-span-1 content-center">
         <!-- Space that goes in between both sides -->
       </div>
-      <div class="col-span-1 text-right">
-        <!-- Contact Me -->
-        <a class="mx-1" href="#section-4"  aria-label="Contact Me Link">
-            <ion-icon class="text-3xl p-0.5" name="mail-outline" ></ion-icon>
+      <div class="col-span-1 text-right content-center">
+        <a class="mx-1" href="#section-2"  aria-label="Contact Me Link">
+            Services
         </a>
-        <!-- Light / Dark Mode -->
+        <a class="mx-1" href="#section-3"  aria-label="Contact Me Link">
+            Projects
+        </a>
+        <a class="mx-1" href="#section-4"  aria-label="Contact Me Link">
+            Contact Us
+        </a>
         
         <button data-popover-target="popover-default" id="popover-trigger" aria-label="Light/Dark Button" class={brightnessMode === "LIGHT" ? lightText : darkText}  type="button">
-          <ion-icon class="text-3xl p-0.5"  name="moon-outline" ></ion-icon>
+          <ion-icon class="text-2xl p-0.5 relative top-1"  name="moon-outline" ></ion-icon>
         </button>
 
         <div data-popover id="popover-default" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
@@ -254,8 +250,8 @@ getBrightnessMode();
             </h1>
             <div class="my-2"></div>
             <p class="landing-text">
-              <span class="text-xl lg:text-3xl ">
-                <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
+              <span class="text-xl lg:text-3xl">
+                <span class='text-[#BB0000] font-bold'>
                   <span class="greetings-anim-1 inline-block">NEED XR?</span>
                   <span class="greetings-anim-2 inline-block">WE</span>
                   <span class="greetings-anim-3 inline-block">GOT YOU.</span>
@@ -381,6 +377,11 @@ getBrightnessMode();
 </main>
 
 <style>
+/* General */
+:global(body) {
+  overflow: hidden; 
+}
+
 /* Greetings Animation */
 .color-header {
   display: inline-block;
@@ -404,15 +405,6 @@ getBrightnessMode();
   }
   100% {
     transform: translateY(0px);
-    opacity: 1;
-  }
-}
-@keyframes fire-slide {
-  0% {
-    transform: translateX(-50px);
-  }
-  100% {
-    transform: translateX(0px);
     opacity: 1;
   }
 }
@@ -457,7 +449,7 @@ getBrightnessMode();
     width: 10px;
     height: 10px;
     transition: 1s;
-    animation: nav-change-section 1s ease;
+    animation: nav-change-section 1s ease forwards;
 }
 @media (max-width: 1000px)  {
     #sectionation-lg{
@@ -479,6 +471,9 @@ getBrightnessMode();
     height: 100vh;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
+}
+::-webkit-scrollbar {
+  width: 0px; /* Set the opacity (0 = fully transparent, 1 = fully opaque) */
 }
 #section-1,
 #section-2,
