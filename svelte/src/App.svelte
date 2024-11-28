@@ -163,7 +163,7 @@ getBrightnessMode();
     <div class="md:w-4/5 lg:w-3/5 mx-auto grid grid-cols-2 md:grid-cols-3">
       <div class="col-span-1 content-center">
         <b class="text-md">
-          PARADIGM XR
+          P/XR
         </b>
       </div>
       <div class="hidden md:block col-span-1 content-center">
@@ -232,12 +232,11 @@ getBrightnessMode();
           <div class="w-full lg:w-2/4 mx-auto bg-[#9999990] content-center">
             <model-viewer 
               id="xr-devices-hero"
-              class="mx-auto relative bottom-10 h-[400px]" 
-              style="transform: scale(1.3)"
+              class="mx-auto relative bottom-10 h-[400px]"
               auto-rotate 
               rotation-per-second="50deg"
               auto-rotate-delay="3000"
-              min-camera-orbit="0deg 75deg 10%"
+              min-camera-orbit="0deg 75deg 5%"
               src="https://ik.imagekit.io/je4p51xox/3D%20Models/hero-anim.glb?updatedAt=1732764059609"
               
               >
