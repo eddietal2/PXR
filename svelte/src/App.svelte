@@ -1,18 +1,28 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { Popover } from 'flowbite';
+  import { Popover, Carousel } from 'flowbite';
 
   let projects = [
         {
             "name": "HARP",
             "image": "https://ik.imagekit.io/2ax1lblqa/Slice_1__1_-removebg-preview.png?updatedAt=1732343747682",
-            "video": "VR Developer",
+            "video": "https://ik.imagekit.io/je4p51xox/videos/Harp_Init_Demo%20-%20Made%20with%20Clipchamp%20(2).mp4?updatedAt=1733445896479",
             "role": "VR Developer",
             "type": "Professional",
             "link": "https://www.harp-rose.org/",
             "text": "VR Enhanced Therapy, powered by Unreal Engine.",
             "description": "VR Startup that aims to make therapy more accessible and innovative. I am the lead software developer for this MVP. This is being built with Unreal Engine 5, while I outsource things like 3D Model creation, audio, etc."
-        }
+        },
+        {
+            "name": "sharp",
+            "image": "https://ik.imagekit.io/2ax1lblqa/Slice_1__1_-removebg-preview.png?updatedAt=1732343747682",
+            "video": "https://ik.imagekit.io/je4p51xox/videos/Harp_Init_Demo%20-%20Made%20with%20Clipchamp%20(2).mp4?updatedAt=1733445896479",
+            "role": "VR Developer",
+            "type": "Professional",
+            "link": "https://www.harp-rose.org/",
+            "text": "VR Enhanced Therapy, powered by Unreal Engine.",
+            "description": "VR Startup that aims to make therapy more accessible and innovative. I am the lead software developer for this MVP. This is being built with Unreal Engine 5, while I outsource things like 3D Model creation, audio, etc."
+        },
       ]
   /**
  * Table of Contents
@@ -64,14 +74,14 @@ getBrightnessMode();
   // Light Mode
   let lightNav = 'backdrop-blur-lg bg-[#fff]/30 h-16 drop-shadow-lg fixed w-full bottom-0 md:top-0 content-center z-50 transition duration-150';
   let lightText = 'text-black transition duration-150';
-  let lightHeader = 'text-[#fff] bg-[#111] text-6xl font-bold transition duration-150';
+  let lightHeader = 'p-1 text-[#fff] bg-[#99999910] text-2xl font-bold transition duration-150';
   let lightBG = 'bg-[#fff] content-center transition duration-150';
   let lightButton = 'bg-[#00000020] text-[#1cb6fc] hover:bg-[#dd0000] hover:text-[#ffd24d] transition duration-1 p-0.5';
 
   // Dark Mode
   let darkNav = 'backdrop-blur-lg text-white bg-[#000]/70 h-16 drop-shadow-lg fixed w-full bottom-0 md:top-0 content-center z-50 transition duration-150';
   let darkText = 'text-white transition duration-150';
-  let darkHeader = 'text-[#111] bg-[#fff] text-6xl font-bold transition duration-150';
+  let darkHeader = 'p-1 text-[#fff] bg-[#99999910] text-2xl font-bold transition duration-150';
   let darkBG = 'bg-[#222] content-center transition duration-150';
   let darkButton = 'bg-[#ffffff20] text-[#1cb6fc] hover:bg-[#dd0000] hover:text-[#ffd24d] transition duration-1 p-0.5';
 
@@ -93,7 +103,7 @@ getBrightnessMode();
           // console.log(activeSection);
           // Active Section, red square
           bullet.innerHTML = `<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <rect width="10" height="10" fill="#2581ff"/>
+                <rect width="10" height="10" fill="#00CF68"/>
               </svg>`
         } else {
           // Inactive Section, white circle.
@@ -121,7 +131,7 @@ getBrightnessMode();
 
     // #3 Model Viewer Landing Header SVG Animation 
     const modelViewerParameters = document.querySelector("model-viewer#xr-devices-hero");
-    modelViewerParameters.addEventListener("load", (ev) => {
+      modelViewerParameters.addEventListener("load", (ev) => {
       // TODO: When this loads, hide loading
       // TODO: Add loading spinner
       let material = modelViewerParameters['model'].materials[0];
@@ -153,6 +163,72 @@ getBrightnessMode();
         }, 10000);
       }
     }
+    
+    const items = [
+        {
+            position: 0,
+            el: document.getElementById('carousel-item-1'),
+        },
+        {
+            position: 1,
+            el: document.getElementById('carousel-item-2'),
+        },
+        {
+            position: 2,
+            el: document.getElementById('carousel-item-3'),
+        },
+        {
+            position: 3,
+            el: document.getElementById('carousel-item-4'),
+        },
+];
+
+    // instance options object
+    const instanceOptions = {
+      id: 'carousel-example',
+      override: true
+    };
+    const options = {
+    defaultPosition: 1,
+    interval: 3000,
+
+    indicators: {
+        activeClasses: 'bg-white dark:bg-gray-800',
+        inactiveClasses:
+            'bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800',
+        items: [
+            {
+                position: 0,
+                el: document.getElementById('carousel-indicator-1'),
+            },
+            {
+                position: 1,
+                el: document.getElementById('carousel-indicator-2'),
+            },
+            {
+                position: 2,
+                el: document.getElementById('carousel-indicator-3'),
+            },
+            {
+                position: 3,
+                el: document.getElementById('carouscarousel-indicator-el-indicator-4'),
+            },
+        ],
+    },
+
+    // callback functions
+    onNext: () => {
+        console.log('next slider item is shown');
+    },
+    onPrev: () => {
+        console.log('previous slider item is shown');
+    },
+    onChange: () => {
+        console.log('new slider item has been shown');
+    },
+};
+const carouselElement = document.getElementById('carousel-example');
+const carousel = new Carousel(carouselElement, items, options, instanceOptions);
 
   });
 </script>
@@ -162,9 +238,16 @@ getBrightnessMode();
   <div class={brightnessMode === "LIGHT" ? lightNav : darkNav}>
     <div class="md:w-4/5 lg:w-3/5 mx-auto grid grid-cols-2 md:grid-cols-3">
       <div class="col-span-1 content-center">
-        <b class="text-2xl">
-          PXR
-        </b>
+        <a 
+        href="#section-1">
+        <img 
+          class="h-16" 
+          alt="PXR Logo"
+          src={brightnessMode === "LIGHT" ? 
+            "https://ik.imagekit.io/je4p51xox/pxr_logo_light.png?updatedAt=1733432273643"
+            : 
+            "https://ik.imagekit.io/je4p51xox/pxr_logo_dark.png?updatedAt=1733432273575"}>
+      </a>
       </div>
       <div class="hidden md:block col-span-1 content-center">
         <!-- Space that goes in between both sides -->
@@ -232,38 +315,41 @@ getBrightnessMode();
           <div class="w-full lg:w-2/4 mx-auto bg-[#9999990] content-center">
             <model-viewer 
               id="xr-devices-hero"
-              class="mx-auto relative bottom-10 h-[400px]"
+              class="mx-auto relative bottom-10 h-[300px] scale-150"
               auto-rotate 
               rotation-per-second="50deg"
               auto-rotate-delay="3000"
-              min-camera-orbit="0deg 75deg 5%"
+              min-camera-orbit="0deg 75deg 0%"
               src="https://ik.imagekit.io/je4p51xox/3D%20Models/hero-anim.glb?updatedAt=1732764059609"
-              
               >
             </model-viewer>
           </div>
           <!-- Text -->
           <div class="w-11/12 lg:w-2/4 mx-auto bg-[#9999990]">
-            <h1 class={brightnessMode === "LIGHT" ? lightHeader : darkHeader}>
-              PARADIGM XR
-            </h1>
-            <div class="my-2"></div>
+            <img 
+              class="w-full" 
+              alt="PXR Text Logo"
+              src={brightnessMode === "LIGHT" ? 
+                "https://ik.imagekit.io/je4p51xox/pxr_textlogo_dark.png?updatedAt=1733435870334"
+                : 
+                "https://ik.imagekit.io/je4p51xox/pxr_textlogo_light.png?updatedAt=1733435843631"}>
             <p class="landing-text">
-              <span class="text-xl lg:text-3xl">
-                <span class='text-[#2581ff] font-bold'>
+              <span class="text-lg lg:text-2xl ml-6">
+                <span class='text-[#00CF68] font-bold'>
                   <span class="greetings-anim-1 inline-block">NEED XR?</span>
                   <span class="greetings-anim-2 inline-block">WE</span>
                   <span class="greetings-anim-3 inline-block">GOT YOU.</span>
                 </span> 
               </span>
               <br>
-              <span class="sm:text-xl xl:text-xl block my-4">
+              <span class="sm:text-xl xl:text-xl block my-4 ml-6">
                 <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
-                  As a versatile developer and designer, I specialize in turning innovative ideas into tangible software. 
-                  From web applications to immersive XR experiences, my expertise spans web development, responsive design, CSS & SVG animation, UI/UX design, and even video game development using Unreal Engine. With a focus on creating high-performing and effective software, I've successfully delivered MVPs and beyond on numerous projects.
+                  Partner with Paradigm XR to turn your XR dreams into reality. We'll help you take your ideas from concept to a functional MVP [minimum viable product], with ongoing development services to scale your project as needed.
                 </span>
             </p>
-            <a href="#section-4" class="text-[#2581ff] border-2 border-[#2581ff] p-2 font-bold">CONTACT US</a>
+            <a href="#section-4" 
+              class="ml-6 mt-4 text-[#00CF68] border-2 border-[#00CF68] p-2 font-bold hover:bg-[#00CF6820] hover:text-[#fff]">CONTACT US
+            </a>
           </div>
         </div>
       </div>
@@ -272,20 +358,65 @@ getBrightnessMode();
     <!-- Our Services-->
     <section data-current-section="s2">
       <div id="section-2" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>
-        <div class="md:w-4/5 lg:w-3/5 p-4 mx-auto md:flex flex-row gap-8">
+        <div class="md:w-4/5 lg:w-3/5 p-4 mx-auto">
           <!-- Header -->
-          <div class="w-11/12 lg:w-2/4 mt-20 md:mt-0">
+          <div class="mt-20 md:mt-0">
               <h1 class={brightnessMode === "LIGHT" ? lightHeader : darkHeader}>
-                OUR SERVICES
+                <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
+                  OUR SERVICES
+                </span>
+                <a href="#section-4" 
+                  class="float-right text-xs text-[#00CF68] p-2 font-bold hover:bg-[#00CF6820] hover:text-[#fff]">CONTACT US
+                </a>
               </h1>
           </div>
           <!-- Services -->
-          <div class="w-11/12 lg:w-2/4 content-center">
-            <ul class={brightnessMode === "LIGHT" ? lightText : darkText}>
+          <div class="content-center">
+            <!-- <ul class={brightnessMode === "LIGHT" ? lightText : darkText}>
               <li>VR, AR, and MR Development</li>
               <li>Web Development</li>
               <li>Consultation</li>
-            </ul>
+            </ul> -->
+            <div class="grid grid-cols-3 gap-4 pt-4">
+              <div class="bg-[#99999910] text-white p-4">
+                <div class="text-center">
+                  <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
+                    <ion-icon style="font-size: 70px;"  name="pencil-outline"></ion-icon>
+                  </span>
+                  <h2 class="font-bold text-3xl text-left mt-4 text-[#00CF68]">Design</h2>
+                  <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
+                    <p class="text-left text-md">Just as an architect meticulously plans before construction begins, Paradigm XR's design team lays the foundation for captivating XR experiences.  We blend UX/UI, interaction, 3D, and graphic design to craft intuitive and visually stunning solutions.
+                    </p>
+                  </span>                
+                </div>
+              </div>
+              <div class="bg-[#99999910] text-white p-4">
+                <div class="text-center">
+                  <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
+                    <ion-icon style="font-size: 70px;"  name="code-slash-outline"></ion-icon>
+                  </span>
+                  <h2 class="font-bold text-3xl text-left mt-4 text-[#00CF68]">Development</h2>
+                  <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
+                    <p class="text-left text-md">Just as a skilled construction crew brings an architect's blueprint to life, Paradigm XR's development team builds high-performance applications for iOS, Android, and Meta Quest powered by 
+                      <a href="https://www.unrealengine.com/en-US" class="text-[#00CF68] hover:border-bottom" target="_blank">
+                        Unreal Engine.
+                      </a>
+                    </p>
+                  </span>
+                </div>
+              </div>
+              <div class="bg-[#99999910] text-white p-4">
+                <div class="text-center">
+                  <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
+                    <ion-icon style="font-size: 70px;"  name="bulb-outline"></ion-icon>
+                  </span>
+                  <h2 class="font-bold text-3xl text-left mt-4 text-[#00CF68]">Consultation</h2>
+                  <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
+                    <p class="text-left text-md">Facing challenges in your XR journey? Paradigm XR's consultants provide strategic guidance and solutions to overcome obstacles and achieve your project objectives. We'll help you navigate technology choices, optimize development workflows, and ensure your XR experience delivers exceptional results.</p>
+                  </span>                
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -295,17 +426,21 @@ getBrightnessMode();
     <section data-current-section="s3">
       <div id="section-3" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>
         <!-- Header -->
-        <div class="md:w-4/5 lg:w-3/5 p-4 mx-auto lg:mb-4 content-center">
+        <div class="md:w-4/5 lg:w-3/5 p-4 mx-auto content-center">
           <h1 class={brightnessMode === "LIGHT" ? lightHeader : darkHeader}>
             PROJECTS
           </h1>
         </div>
         <!-- Project -->
         <div class="md:w-4/5 lg:w-3/5 p-4 gap-8 mx-auto">
-          {#each projects as project, index}
-            <div class="flex flex-row gap-2 p-2 my-2 lg:my-0">
-              <div class="content-center w-full bg-[#dd000010]">
-                <img src={project.image} class="h-24" alt="Project Logo">
+          <div id="default-carousel" class="relative w-full" data-carousel="slide">
+            <!-- Carousel wrapper -->
+            <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+              {#each projects as project, index}
+                <div class="flex flex-row gap-2 p-2 my-2 lg:my-0" data-carousel-item>
+                  <div class="bg-[#99999910]">
+                <h1>#{index}</h1>
+                <img src={project.image} class="h-24 mx-auto" alt="Project Logo">
                 
                 <span class="text-xs">
                   <p class={brightnessMode === "LIGHT" ? lightText : darkText}>{project.name}</p>
@@ -325,18 +460,43 @@ getBrightnessMode();
                     </div>
                   </div>
                 </span>
-              </div>
-              <div class="content-center w-full bg-[#00ff0010]">
-                <!-- Project Card Text -->
-                <span class="text-xs">
-                  <p class={brightnessMode === "LIGHT" ? lightText : darkText}>{project.role} / 2023 - 2024</p>
-                </span>
-                <p style="font-size: 1.2em;" class={brightnessMode === "LIGHT" ? lightText : darkText}>
-                  {project.text}
-                </p>
-              </div>
+                  </div>
+                  <div class="content-center">
+                  <!-- svelte-ignore a11y_media_has_caption -->
+                  <video src={project.video} autoplay>
+                  </div>
+                </div>
+              {/each }
+              
+    <!-- Slider indicators -->
+    <div class="absolute z-30 flex -translate-x-1/2 bottom-2 bg-[#99999950] rounded p-2 left-1/2 space-x-3 rtl:space-x-reverse">
+      {#each projects as project, index}
+        <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
+          <button type="button" class="w-3 h-3 rounded-full" aria-current="true" aria-label="Slide {index}" data-carousel-slide-to={index}></button>
+        </span>
+      {/each}
+    </div>
+    <!-- Slider controls -->
+     <button type="button" class="absolute top-12 start-24 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+      <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#00CF6820] group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+          <svg class="w-4 h-4 text-[#00CF68] dark:text-gray-800 rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+              <path stroke="#00CF68" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+          </svg>
+          <span class="sr-only">Previous</span>
+      </span>
+    </button>
+    <button type="button" class="absolute top-12 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+      <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#00CF6820] group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+          <svg class="w-4 h-4 text-[#00CF68] rtl:rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+              <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+          </svg>
+          <span class="sr-only">Next</span>
+      </span>
+    </button>
             </div>
-          {/each }
+          </div>
+
+          
         </div>
       </div>
     </section>
@@ -344,7 +504,7 @@ getBrightnessMode();
     <!-- Contact Us -->
     <section data-current-section="s4">
       <div id="section-4" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>
-        <div class="md:w-4/5 lg:w-3/5 mx-auto mb-8">
+        <div class="md:w-4/5 lg:w-full mx-auto mb-8">
           <!-- Header -->
           <div class="text-center content-center">
             <h1 class={brightnessMode === "LIGHT" ? lightText : darkText} style="font-size: 2em; font-weight: 600;">CONTACT ME</h1>
@@ -353,6 +513,9 @@ getBrightnessMode();
               📬
             </span>
             
+          </div>
+          <div>
+            <!-- https://ik.imagekit.io/je4p51xox/Gemini_Generated_Image_6euxcz6euxcz6eux.jpg?updatedAt=1732768747586 -->
           </div>
 
         <!-- Form -->
