@@ -76,14 +76,16 @@ getBrightnessMode();
   let lightText = 'text-black transition duration-150';
   let lightHeader = 'p-1 text-[#fff] bg-[#99999910] text-2xl font-bold transition duration-150';
   let lightBG = 'bg-[#fff] content-center transition duration-150';
-  let lightButton = 'bg-[#00000020] text-[#1cb6fc] hover:bg-[#dd0000] hover:text-[#ffd24d] transition duration-1 p-0.5';
+  let lightButton = 'bg-[#00000020] text-[#00CF68] hover:bg-[#00CF68] hover:text-[#fff] transition duration-1 py-1 px-4';
+  let lightInput = 'text-[#111]';
 
   // Dark Mode
   let darkNav = 'backdrop-blur-lg text-white bg-[#000]/70 h-16 drop-shadow-lg fixed w-full bottom-0 md:top-0 content-center z-50 transition duration-150';
   let darkText = 'text-white transition duration-150';
   let darkHeader = 'p-1 text-[#fff] bg-[#99999910] text-2xl font-bold transition duration-150';
   let darkBG = 'bg-[#222] content-center transition duration-150';
-  let darkButton = 'bg-[#ffffff20] text-[#1cb6fc] hover:bg-[#dd0000] hover:text-[#ffd24d] transition duration-1 p-0.5';
+  let darkButton = 'bg-[#ffffff20] text-[#00CF68] hover:bg-[#00CF68] hover:text-[#fff] transition duration-1 py-1 px-4';
+  let darkInput = 'text-[#fff]';
 
   onMount(() => {
     setSnapScrolling();
@@ -187,14 +189,14 @@ getBrightnessMode();
         <!-- Space that goes in between both sides -->
       </div>
       <div class="col-span-1 text-right content-center">
-        <a class="mx-1" href="#section-2"  aria-label="Contact Me Link">
-            Services
+        <a class="mx-1" href="#section-1" aria-label="Contact Me Link">
+            How We Work
         </a>
-        <a class="mx-1" href="#section-3"  aria-label="Contact Me Link">
+        <a class="mx-1" href="#section-1" aria-label="Contact Me Link">
             Projects
         </a>
-        <a class="mx-1" href="#section-4"  aria-label="Contact Me Link">
-            Contact Us
+        <a class="mx-1" href="#section-1" aria-label="Contact Me Link">
+            About Us
         </a>
         
         <button data-popover-target="popover-default" id="popover-trigger" aria-label="Light/Dark Button" class={brightnessMode === "LIGHT" ? lightText : darkText}  type="button">
@@ -412,12 +414,19 @@ getBrightnessMode();
         <div class="md:w-4/5 lg:w-full mx-auto mb-8">
           <!-- Header -->
           <div class="text-center content-center">
-            <h1 class={brightnessMode === "LIGHT" ? lightText : darkText} style="font-size: 2em; font-weight: 600;">CONTACT ME</h1>
+            <h1 class={brightnessMode === "LIGHT" ? lightText : darkText} style="font-size: 2em; font-weight: 600;">CONTACT US</h1>
             <span style="font-size: 5em;" class={brightnessMode === "LIGHT" ? lightText : darkText}>
-              <!-- Mail Icon -->
-              📬
-            </span>
-            
+              <!-- PXR Logo -->
+              
+              <img 
+              class="h-32 mx-auto" 
+              alt="PXR Logo"
+              src={brightnessMode === "LIGHT" ? 
+                "https://ik.imagekit.io/je4p51xox/pxr_logo_light.png?updatedAt=1733432273643"
+                : 
+                "https://ik.imagekit.io/je4p51xox/pxr_logo_dark.png?updatedAt=1733432273575"}>
+                  </span>
+                  
           </div>
           <div>
             <!-- https://ik.imagekit.io/je4p51xox/Gemini_Generated_Image_6euxcz6euxcz6eux.jpg?updatedAt=1732768747586 -->
@@ -428,11 +437,17 @@ getBrightnessMode();
             <!-- https://formsubmit.co/ -->
             <!-- https://www.youtube.com/watch?v=iSobU_DjNN4 -->
             <form action="https://formsubmit.co/f6e4bbd318fdd3193043ce91e88f6bfd" method="POST">
-                <input class="text-lg text-[#111] w-full my-1 h-10 p-2 border-2 border-[#999]" type="text" required placeholder="First & Last Name" name="name">
-                <input class="text-lg text-[#111] w-full my-1 h-10 p-2 border-2 border-[#999]" type="text" required placeholder="Email Address" name="email">
-                <textarea class="text-lg text-[#111] my-1 mx-auto p-2 w-full border-2 border-[#999]" rows="5" required placeholder="Want to collaborate or have a suggestion?" name="message"></textarea>
-                <button class={brightnessMode === "LIGHT" ? lightButton : darkButton} style="padding: 0.75em; font-size: 1.2em;" type="submit">
-                    Send Message
+                <span class={brightnessMode === "LIGHT" ? lightInput : darkInput}>
+                  <input class="w-full my-1 h-10 p-2" type="text" style="background: none;" required placeholder="First & Last Name" name="name">
+                </span>
+                <span class={brightnessMode === "LIGHT" ? lightInput : darkInput}>
+                  <input class="w-full my-1 h-10 p-2" type="text" style="background: none;" required placeholder="Email Address" name="email">
+                </span>
+                <span class={brightnessMode === "LIGHT" ? lightInput : darkInput}>
+                  <textarea class="my-1 mx-auto p-2 w-full" style="background: none;" rows="6" required placeholder="Want to collaborate or have a suggestion?" name="message"></textarea>
+                </span>
+                <button class={brightnessMode === "LIGHT" ? lightButton : darkButton} type="submit">
+                    SEND MESSAGE
                 </button>
             </form>
         </div>
