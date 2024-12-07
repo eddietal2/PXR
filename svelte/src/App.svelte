@@ -1,6 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  import { Popover, Carousel } from 'flowbite';
+  import { Popover } from 'flowbite';
 
   let projects = [
         {
