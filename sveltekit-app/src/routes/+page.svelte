@@ -32,6 +32,7 @@ getBrightnessMode();
   let lightText = 'text-black transition duration-150';
   let lightHeader = 'p-1 text-[#fff] bg-[#99999910] text-2xl font-bold transition duration-150';
   let lightBG = 'bg-[#fff] content-center transition duration-150';
+  let lightBGFooter = "bg-[#fff] content-center transition duration-150";
   let lightButton = 'bg-[#00000020] text-[#00CF68] hover:bg-[#00CF68] hover:text-[#fff] transition duration-1 py-1 px-4';
 	let lightInput = 'text-[#111]';
 
@@ -39,6 +40,7 @@ getBrightnessMode();
   let darkText = 'text-white transition duration-150';
   let darkHeader = 'p-1 text-[#fff] bg-[#99999910] text-2xl font-bold transition duration-150';
   let darkBG = 'bg-[#222] content-center transition duration-150';
+  let darkBGFooter = "bg-[#111] content-center transition duration-150";
   let darkButton = 'bg-[#ffffff20] text-[#00CF68] hover:bg-[#00CF68] hover:text-[#fff] transition duration-1 py-1 px-4';
 	let darkInput = 'text-[#fff]';
 
@@ -314,11 +316,13 @@ getBrightnessMode();
 
     <!-- Contact Us -->
     <section data-current-section="s4">
-      <div id="section-4" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>
+      <div id="section-4" class={brightnessMode === "LIGHT" ? lightBGFooter : darkBGFooter}>
         <div class="md:w-4/5 lg:w-full mx-auto mb-8">
         <!-- Header -->
         <div class="text-center content-center">
-          <h1 class={brightnessMode === "LIGHT" ? lightText : darkText} style="font-size: 2em; font-weight: 600;">CONTACT US</h1>
+          <div class="inline-block mx-auto p-2 border border-[#ffcb0a] bg-[#ffcb0a]/20 text-xl">
+            <h1 class={brightnessMode === "LIGHT" ? lightText : darkText}>Connect with us for a Free Consultation!</h1>
+          </div>
           <span style="font-size: 5em;" class={brightnessMode === "LIGHT" ? lightText : darkText}>
           <!-- PXR Logo -->
           
@@ -471,19 +475,17 @@ getBrightnessMode();
       scroll-snap-align: start;
   }
   @media (max-width: 1000px)  {
-      #wrapper,
       #section-1,
       #section-2,
-      #section-3 {
+      #section-3,
+      #section-4
+       {
           scroll-snap-type: none;
           scroll-snap-align: none;
           height: auto;
       }
   
       #section-4 {
-          scroll-snap-type: none;
-          scroll-snap-align: none;
-          height: auto;
           padding: 10em 0 5em 0;
       }
   }
