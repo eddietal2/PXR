@@ -65,13 +65,13 @@ getBrightnessMode();
             Home
         </a>
         <a class="mx-2.5 text-xs" href="/how-we-do" aria-label="How We Work Link">
-            How We Work
+          Process
         </a>
         <a class="mx-2.5 text-xs" href="/projects" aria-label="Contact Me Link">
-            Projects
+          Projects
         </a>
         <a class="mx-2.5 text-xs" href="/about" aria-label="Contact Me Link">
-            About Us
+          About Us
         </a>
         
         <button data-popover-target="popover-default" id="popover-trigger" aria-label="Light/Dark Button" class={brightnessMode === "LIGHT" ? lightText : darkText}  type="button">
