@@ -129,28 +129,44 @@ getBrightnessMode();
  <nav id="sectionation-lg" class={brightnessMode === "LIGHT" ? darkBG : lightBG}>
     <ul >
         <li>
-            <div class="nav-bullet" data-current-section="s1" aria-label="First Section"></div>
+            <a href="#section-1" aria-label="First Section">
+              <div class="nav-bullet" data-current-section="s1"></div>
+            </a>
         </li>
         <li>
-            <div class="nav-bullet" data-current-section="s2" aria-label="Second Section"></div>
+          <a href="#section-2" aria-label="Second Section">
+            <div class="nav-bullet" data-current-section="s2"></div>
+          </a>
         </li>
         <li>
-            <div class="nav-bullet" data-current-section="s3" aria-label="Third Section"></div>
+          <a href="#section-3" aria-label="Third Section">
+            <div class="nav-bullet" data-current-section="s3"></div>
+          </a>
         </li>
         <li>
-            <div class="nav-bullet" data-current-section="s4" aria-label="Fourth Section"></div>
+          <a href="#section-4" aria-label="Fourth Section">
+            <div class="nav-bullet" data-current-section="s4"></div>
+          </a>
         </li>
         <li>
-            <div class="nav-bullet" data-current-section="s5" aria-label="Second Section"></div>
+            <a href="#section-5" aria-label="Fifth Section">
+            <div class="nav-bullet" data-current-section="s5"></div>
+          </a>
         </li>
         <li>
-            <div class="nav-bullet" data-current-section="s6" aria-label="Third Section"></div>
+            <a href="#section-6" aria-label="Sixth Section">
+            <div class="nav-bullet" data-current-section="s6"></div>
+          </a>
         </li>
         <li>
-            <div class="nav-bullet" data-current-section="s7" aria-label="Fourth Section"></div>
+            <a href="#section-7" aria-label="Seventh Section">
+            <div class="nav-bullet" data-current-section="s7"></div>
+          </a>
         </li>
         <li>
-            <div class="nav-bullet" data-current-section="s8" aria-label="Fourth Section"></div>
+            <a href="#section-8" aria-label="Eigth Section">
+            <div class="nav-bullet" data-current-section="s8"></div>
+          </a>
         </li>
     </ul>
 </nav>
@@ -233,7 +249,7 @@ getBrightnessMode();
 
     <!-- 1. Ideation -->
     <section data-current-section="s2">
-      <div id="section-1" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>
+      <div id="section-2" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>
         <div class="md:w-4/5 lg:w-3/5 mx-auto lg:flex flex-row gap-10">
           <div class="w-full lg:w-2/4 mx-auto bg-[#9999990] content-center">
             <h2 class={brightnessMode === "LIGHT" ? lightText : darkText}>
@@ -301,7 +317,7 @@ getBrightnessMode();
     
     <!-- 2. Define the Scope -->
     <section data-current-section="s3">
-      <div id="section-2" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>
+      <div id="section-3" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>
         <div class="md:w-4/5 lg:w-3/5 mx-auto lg:flex flex-row gap-10">
           <div class="w-full lg:w-2/4 mx-auto bg-[#9999990] content-center">
             <h2 class={brightnessMode === "LIGHT" ? lightText : darkText}>
@@ -347,7 +363,7 @@ getBrightnessMode();
 
     <!-- 3. UI/UX Design -->
     <section data-current-section="s4">
-      <div id="section-3" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>
+      <div id="section-4" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>
         <div class="md:w-4/5 lg:w-3/5 mx-auto lg:flex flex-row gap-10">
           <div class="w-full lg:w-2/4 mx-auto bg-[#9999990] content-center">
             <h2 class={brightnessMode === "LIGHT" ? lightText : darkText}>
@@ -428,7 +444,7 @@ getBrightnessMode();
 
     <!-- 4. Development -->
     <section data-current-section="s5">
-      <div id="section-4" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>      
+      <div id="section-5" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>      
         <div class="md:w-4/5 lg:w-3/5 mx-auto lg:flex flex-row gap-10">
           <div class="w-full lg:w-2/4 mx-auto bg-[#9999990] content-center">
             <h2 class={brightnessMode === "LIGHT" ? lightText : darkText}>
@@ -551,7 +567,9 @@ getBrightnessMode();
         <div class="md:w-4/5 lg:w-full mx-auto mb-8">
         <!-- Header -->
         <div class="text-center content-center">
-          <h1 class={brightnessMode === "LIGHT" ? lightText : darkText} style="font-size: 2em; font-weight: 600;">CONTACT US</h1>
+          <div class="inline-block mx-auto p-2 border border-[#ffcb0a] bg-[#ffcb0a]/20 text-xl">
+            <h1 class={brightnessMode === "LIGHT" ? lightText : darkText}>Connect with us for a Free Consultation!</h1>
+          </div>
           <span style="font-size: 5em;" class={brightnessMode === "LIGHT" ? lightText : darkText}>
           <!-- PXR Logo -->
           
