@@ -61,16 +61,16 @@ getBrightnessMode();
       </div>
      
       <div class="col-span-1 text-right content-center">
-        <a class="mx-2.5 text-xs" href="/" aria-label="How We Work Link">
+        <a class="mx-2.5 text-xs" href="/" aria-label="Home Link">
             Home
         </a>
-        <a class="mx-2.5 text-xs" href="/how-we-do" aria-label="How We Work Link">
+        <a class="mx-2.5 text-xs" href="/process" aria-label="Process Link">
           Process
         </a>
-        <a class="mx-2.5 text-xs" href="/projects" aria-label="Contact Me Link">
+        <a class="mx-2.5 text-xs" href="/projects" aria-label="Projects Link">
           Projects
         </a>
-        <a class="mx-2.5 text-xs" href="/about" aria-label="Contact Me Link">
+        <a class="mx-2.5 text-xs" href="/about" aria-label="About Us Link">
           About Us
         </a>
         
