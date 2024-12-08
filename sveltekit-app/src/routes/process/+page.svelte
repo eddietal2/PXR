@@ -30,7 +30,6 @@ getBrightnessMode();
    */
   // Light Mode
   let lightText = 'text-black transition duration-150';
-  let lightHeader = 'p-1 text-[#fff] bg-[#99999910] text-2xl font-bold transition duration-150';
   let lightBG = 'bg-[#fff] content-center transition duration-150';
   let lightBGFooter = "bg-[#fff] content-center transition duration-150";
   let lightButton = 'bg-[#00000020] text-[#00CF68] hover:bg-[#00CF68] hover:text-[#fff] transition duration-1 py-1 px-4';
@@ -38,7 +37,6 @@ getBrightnessMode();
 
   // Dark Mode
   let darkText = 'text-white transition duration-150';
-  let darkHeader = 'p-1 text-[#fff] bg-[#99999910] text-2xl font-bold transition duration-150';
   let darkBG = 'bg-[#222] content-center transition duration-150';
   let darkBGFooter = "bg-[#111] content-center transition duration-150";
   let darkButton = 'bg-[#ffffff20] text-[#00CF68] hover:bg-[#00CF68] hover:text-[#fff] transition duration-1 py-1 px-4';
@@ -46,7 +44,6 @@ getBrightnessMode();
 
   onMount(() => {
     setSnapScrolling();
-    setDailyDarkModePopover();
 
     // #1 Snap Scroll Behavior Desktop
     function setSnapScrolling() {
@@ -86,41 +83,6 @@ getBrightnessMode();
       sections.forEach((section) => {
       observer.observe(section);
     });
-    }
-
-    // #3 Model Viewer Landing Header SVG Animation 
-    // const modelViewerParameters = document.querySelector("model-viewer#xr-devices-hero") as any;
-    //   modelViewerParameters.addEventListener("load", (ev: any) => {
-    //   // TODO: When this loads, hide loading
-    //   // TODO: Add loading spinner
-    //   let material = modelViewerParameters['model'].materials[0];
-    //   console.log(material);
-      
-    // })
-
-    // #7 Handle Project Description Popover
-    /**
-     * Show the Dark/Light mode popover for 5 seconds when the page loads. 
-     * I am doing this just to learn how to do it, and a small bit of UX in
-     * case someone refreshed they page. No need to see the popover again If you have already
-     * seen it once
-     */
-    function setDailyDarkModePopover() {
-      const popoverEl = document.getElementById('popover-default');
-      const popoverTrigger = document.getElementById('popover-trigger');
-
-      const today = new Date().toLocaleDateString();
-      const storageKey = `popoverShownToday-${today}`;
-      const hasShownToday = localStorage.getItem(storageKey);
-      localStorage.setItem(storageKey, 'true');
-
-    //   if (!hasShownToday) {
-    //     const popover = new Popover(popoverEl, popoverTrigger);
-    //     popover.show();
-    //     setTimeout(() => {
-    //       popover.hide();
-    //     }, 10000);
-    //   }
     }
 
   });
