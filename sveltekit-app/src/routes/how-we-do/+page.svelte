@@ -129,9 +129,7 @@ getBrightnessMode();
  <nav id="sectionation-lg" class={brightnessMode === "LIGHT" ? darkBG : lightBG}>
     <ul >
         <li>
-            <div class="nav-bullet" data-current-section="s1" aria-label="First Section">
-              
-            </div>
+            <div class="nav-bullet" data-current-section="s1" aria-label="First Section"></div>
         </li>
         <li>
             <div class="nav-bullet" data-current-section="s2" aria-label="Second Section"></div>
@@ -142,30 +140,69 @@ getBrightnessMode();
         <li>
             <div class="nav-bullet" data-current-section="s4" aria-label="Fourth Section"></div>
         </li>
+        <li>
+            <div class="nav-bullet" data-current-section="s5" aria-label="Second Section"></div>
+        </li>
+        <li>
+            <div class="nav-bullet" data-current-section="s6" aria-label="Third Section"></div>
+        </li>
+        <li>
+            <div class="nav-bullet" data-current-section="s7" aria-label="Fourth Section"></div>
+        </li>
+        <li>
+            <div class="nav-bullet" data-current-section="s8" aria-label="Fourth Section"></div>
+        </li>
     </ul>
 </nav>
 
   <div id="wrapper">
-
-    <!-- Landing Intro -->
+    <!-- How We Do Intro -->
     <section data-current-section="s1">
       <div id="section-1" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>
+        <div class="md:w-4/5 lg:w-3/5 mx-auto text-center">
+          <div class="h-40 w-40 bg-[#999] mx-auto"></div>
+          <!-- <img 
+          class="w-1/2 mx-auto" 
+          alt="PXR Text Logo"
+          src={brightnessMode === "LIGHT" ? 
+            "https://ik.imagekit.io/je4p51xox/pxr_textlogo_dark.png?updatedAt=1733435870334"
+            : 
+            "https://ik.imagekit.io/je4p51xox/pxr_textlogo_light.png?updatedAt=1733435843631"}> -->
+          <img 
+          class="w-1/2 mx-auto" 
+          alt="PXR Text Logo"
+          src={brightnessMode === "LIGHT" ? 
+            "https://ik.imagekit.io/je4p51xox/pxr_textlogo_dark.png?updatedAt=1733435870334"
+            : 
+            "https://ik.imagekit.io/je4p51xox/pxr_textlogo_light.png?updatedAt=1733435843631"}>
+            <h2 class={brightnessMode === "LIGHT" ? lightText : darkText}>
+              <span class="text-3xl font-bold">The Process of Developing an XR Application</span>
+            </h2>
+            <p class="sm:text-xl xl:text-xl block my-4 ml-6 text-left">
+                <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
+                  Partner with Paradigm XR to turn your XR dreams into reality. We'll help you take your ideas from concept to a functional MVP [minimum viable product], with ongoing development services to scale your project as needed.
+                </span>
+            </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1. Ideation -->
+    <section data-current-section="s2">
+      <div id="section-1" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>
         <div class="md:w-4/5 lg:w-3/5 mx-auto lg:flex flex-row gap-10">
-          <!-- 3D Models -->
           <div class="w-full lg:w-2/4 mx-auto bg-[#9999990] content-center">
-            <model-viewer 
-              id="xr-devices-hero"
-              class="mx-auto relative bottom-10 h-[300px] scale-150"
-              auto-rotate 
-              rotation-per-second="50deg"
-              auto-rotate-delay="3000"
-              min-camera-orbit="0deg 75deg 0%"
-              src="https://ik.imagekit.io/je4p51xox/3D%20Models/hero-anim.glb?updatedAt=1732764059609"
-              >
-            </model-viewer>
+            <h2 class={brightnessMode === "LIGHT" ? lightText : darkText}>
+              <span class="text-5xl font-bold">1. Ideation</span>
+            </h2>
+            <p class="sm:text-xl xl:text-xl block my-4 ml-6">
+                <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
+                  Partner with Paradigm XR to turn your XR dreams into reality. We'll help you take your ideas from concept to a functional MVP [minimum viable product], with ongoing development services to scale your project as needed.
+                </span>
+            </p>
           </div>
           <!-- Text -->
-          <div class="w-11/12 lg:w-2/4 mx-auto bg-[#9999990]">
+          <div class="w-11/12 lg:w-2/4 mx-auto bg-[#9999990] content-center">
             <img 
               class="w-full" 
               alt="PXR Text Logo"
@@ -173,148 +210,154 @@ getBrightnessMode();
                 "https://ik.imagekit.io/je4p51xox/pxr_textlogo_dark.png?updatedAt=1733435870334"
                 : 
                 "https://ik.imagekit.io/je4p51xox/pxr_textlogo_light.png?updatedAt=1733435843631"}>
-            <p class="landing-text">
-              <span class="text-lg lg:text-2xl ml-6">
-                <span class='text-[#00CF68] font-bold'>
-                  <span class="greetings-anim-1 inline-block">NEED XR?</span>
-                  <span class="greetings-anim-2 inline-block">WE</span>
-                  <span class="greetings-anim-3 inline-block">GOT YOU.</span>
-                </span> 
-              </span>
-              <br>
-              <span class="sm:text-xl xl:text-xl block my-4 ml-6">
-                <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
-                  Partner with Paradigm XR to turn your XR dreams into reality. We'll help you take your ideas from concept to a functional MVP [minimum viable product], with ongoing development services to scale your project as needed.
-                </span>
-            </p>
-            <a href="#section-4" 
-              class="ml-6 mt-4 text-[#00CF68] border-2 border-[#00CF68] p-2 font-bold hover:bg-[#00CF6820] hover:text-[#fff]">CONTACT US
-            </a>
           </div>
         </div>
       </div>
     </section>
     
-    <!-- Our Services-->
-    <section data-current-section="s2">
+    <!-- 2. Define the Scope -->
+    <section data-current-section="s3">
       <div id="section-2" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>
-        <div class="md:w-4/5 lg:w-3/5 p-4 mx-auto">
-          <!-- Header -->
-          <div class="mt-20 md:mt-0">
-              <h1 class={brightnessMode === "LIGHT" ? lightHeader : darkHeader}>
+        <div class="md:w-4/5 lg:w-3/5 mx-auto lg:flex flex-row gap-10">
+          <div class="w-full lg:w-2/4 mx-auto bg-[#9999990] content-center">
+            <h2 class={brightnessMode === "LIGHT" ? lightText : darkText}>
+              <span class="text-5xl font-bold">2. Define the Scope</span>
+            </h2>
+            <p class="sm:text-xl xl:text-xl block my-4 ml-6">
                 <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
-                  OUR SERVICES
+                  Partner with Paradigm XR to turn your XR dreams into reality. We'll help you take your ideas from concept to a functional MVP [minimum viable product], with ongoing development services to scale your project as needed.
                 </span>
-                <a href="#section-4" 
-                  class="float-right text-xs text-[#00CF68] p-2 font-bold hover:bg-[#00CF6820] hover:text-[#fff]">CONTACT US
-                </a>
-              </h1>
+            </p>
           </div>
-          <!-- Services -->
-          <div class="content-center">
-            <!-- <ul class={brightnessMode === "LIGHT" ? lightText : darkText}>
-              <li>VR, AR, and MR Development</li>
-              <li>Web Development</li>
-              <li>Consultation</li>
-            </ul> -->
-            <div class="grid grid-cols-3 gap-4 pt-4">
-              <div class="bg-[#99999910] text-white p-4">
-                <div class="text-center">
-                  <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
-                    <ion-icon style="font-size: 70px;"  name="pencil-outline"></ion-icon>
-                  </span>
-                  <h2 class="font-bold text-3xl text-left mt-4 text-[#00CF68]">Design</h2>
-                  <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
-                    <p class="text-left text-md">Just as an architect meticulously plans before construction begins, Paradigm XR's design team lays the foundation for captivating XR experiences.  We blend UX/UI, interaction, 3D, and graphic design to craft intuitive and visually stunning solutions.
-                    </p>
-                  </span>                
-                </div>
-              </div>
-              <div class="bg-[#99999910] text-white p-4">
-                <div class="text-center">
-                  <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
-                    <ion-icon style="font-size: 70px;"  name="code-slash-outline"></ion-icon>
-                  </span>
-                  <h2 class="font-bold text-3xl text-left mt-4 text-[#00CF68]">Development</h2>
-                  <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
-                    <p class="text-left text-md">Just as a skilled construction crew brings an architect's blueprint to life, Paradigm XR's development team builds high-performance applications for iOS, Android, and Meta Quest powered by 
-                      <a href="https://www.unrealengine.com/en-US" class="text-[#00CF68] hover:border-bottom" target="_blank">
-                        Unreal Engine.
-                      </a>
-                    </p>
-                  </span>
-                </div>
-              </div>
-              <div class="bg-[#99999910] text-white p-4">
-                <div class="text-center">
-                  <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
-                    <ion-icon style="font-size: 70px;"  name="bulb-outline"></ion-icon>
-                  </span>
-                  <h2 class="font-bold text-3xl text-left mt-4 text-[#00CF68]">Consultation</h2>
-                  <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
-                    <p class="text-left text-md">Facing challenges in your XR journey? Paradigm XR's consultants provide strategic guidance and solutions to overcome obstacles and achieve your project objectives. We'll help you navigate technology choices, optimize development workflows, and ensure your XR experience delivers exceptional results.</p>
-                  </span>                
-                </div>
-              </div>
-            </div>
+          <!-- Text -->
+          <div class="w-11/12 lg:w-2/4 mx-auto bg-[#9999990] content-center">
+            <img 
+              class="w-full" 
+              alt="PXR Text Logo"
+              src={brightnessMode === "LIGHT" ? 
+                "https://ik.imagekit.io/je4p51xox/pxr_textlogo_dark.png?updatedAt=1733435870334"
+                : 
+                "https://ik.imagekit.io/je4p51xox/pxr_textlogo_light.png?updatedAt=1733435843631"}>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Projects -->
-    <section data-current-section="s3">
+    <!-- 3. UI/UX Design -->
+    <section data-current-section="s4">
       <div id="section-3" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>
-        <!-- Header -->
-        <div class="md:w-4/5 lg:w-3/5 mx-auto content-center">
-          <h1 class={brightnessMode === "LIGHT" ? lightHeader : darkHeader}>
-            LATEST PROJECT
-            
+        <div class="md:w-4/5 lg:w-3/5 mx-auto lg:flex flex-row gap-10">
+          <div class="w-full lg:w-2/4 mx-auto bg-[#9999990] content-center">
+            <h2 class={brightnessMode === "LIGHT" ? lightText : darkText}>
+              <span class="text-5xl font-bold">4. UI/UX Design</span>
+            </h2>
+            <p class="sm:text-xl xl:text-xl block my-4 ml-6">
+                <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
+                  Partner with Paradigm XR to turn your XR dreams into reality. We'll help you take your ideas from concept to a functional MVP [minimum viable product], with ongoing development services to scale your project as needed.
+                </span>
+            </p>
+          </div>
+          <!-- Text -->
+          <div class="w-11/12 lg:w-2/4 mx-auto bg-[#9999990] content-center">
             <img 
-            src="https://ik.imagekit.io/2ax1lblqa/Slice_1__1_-removebg-preview.png?updatedAt=1732343747682" 
-            class="p-2 h-10 float-right" 
-            alt="Project Logo">
-          <a
-            href="https://www.harp-rose.org/"
-            class="float-right text-xs text-[#00CF68] p-2 font-bold hover:bg-[#00CF6820] hover:text-[#fff]"
-            target="_blank"
-            >
-            HARP Website
-          </a>
-          <span class="float-right text-[#ffffff20]">|</span>
-          <button 
-            data-popover-target="popover-description" type="button" class={brightnessMode === "LIGHT" ? lightButton : darkButton}>
-            Project Summary
-          </button>
-          </h1>
-          
+              class="w-full" 
+              alt="PXR Text Logo"
+              src={brightnessMode === "LIGHT" ? 
+                "https://ik.imagekit.io/je4p51xox/pxr_textlogo_dark.png?updatedAt=1733435870334"
+                : 
+                "https://ik.imagekit.io/je4p51xox/pxr_textlogo_light.png?updatedAt=1733435843631"}>
+          </div>
         </div>
-        <!-- Project -->
-        <div class="md:w-4/5 lg:w-3/5 mx-auto">
-          <div class="relative">
-              <span class="p-2 absolute top-0 right-0">
-                  <button class={brightnessMode === "LIGHT" ? lightButton : darkButton}>
-                    <a target="_blank">Link</a>
-                  </button>
-                  <button data-popover-target="popover-description" type="button" class={brightnessMode === "LIGHT" ? lightButton : darkButton}>Description
-                    
-                  </button>
-              </span>
+      </div>
+    </section>
 
-            <!-- svelte-ignore a11y_media_has_caption -->
-            <video 
-              src="https://ik.imagekit.io/je4p51xox/videos/Harp_Init_Demo%20-%20Made%20with%20Clipchamp%20(2).mp4?updatedAt=1733445896479" 
-              autoplay
+    <!-- 4. Development -->
+    <section data-current-section="s5">
+      <div id="section-4" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>      
+        <div class="md:w-4/5 lg:w-3/5 mx-auto lg:flex flex-row gap-10">
+          <div class="w-full lg:w-2/4 mx-auto bg-[#9999990] content-center">
+            <h2 class={brightnessMode === "LIGHT" ? lightText : darkText}>
+              <span class="text-5xl font-bold">4. Development</span>
+            </h2>
+            <p class="sm:text-xl xl:text-xl block my-4 ml-6">
+                <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
+                  Partner with Paradigm XR to turn your XR dreams into reality. We'll help you take your ideas from concept to a functional MVP [minimum viable product], with ongoing development services to scale your project as needed.
+                </span>
+            </p>
+          </div>
+          <!-- Text -->
+          <div class="w-11/12 lg:w-2/4 mx-auto bg-[#9999990] content-center">
+            <img 
+              class="w-full" 
+              alt="PXR Text Logo"
+              src={brightnessMode === "LIGHT" ? 
+                "https://ik.imagekit.io/je4p51xox/pxr_textlogo_dark.png?updatedAt=1733435870334"
+                : 
+                "https://ik.imagekit.io/je4p51xox/pxr_textlogo_light.png?updatedAt=1733435843631"}>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            >
+    <!-- 5. Launch -->
+    <section data-current-section="s6">
+      <div id="section-5" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>
+        <div class="md:w-4/5 lg:w-3/5 mx-auto lg:flex flex-row gap-10">
+          <div class="w-full lg:w-2/4 mx-auto bg-[#9999990] content-center">
+            <h2 class={brightnessMode === "LIGHT" ? lightText : darkText}>
+              <span class="text-5xl font-bold">5. Launch</span>
+            </h2>
+            <p class="sm:text-xl xl:text-xl block my-4 ml-6">
+                <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
+                  Partner with Paradigm XR to turn your XR dreams into reality. We'll help you take your ideas from concept to a functional MVP [minimum viable product], with ongoing development services to scale your project as needed.
+                </span>
+            </p>
+          </div>
+          <!-- Text -->
+          <div class="w-11/12 lg:w-2/4 mx-auto bg-[#9999990] content-center">
+            <img 
+              class="w-full" 
+              alt="PXR Text Logo"
+              src={brightnessMode === "LIGHT" ? 
+                "https://ik.imagekit.io/je4p51xox/pxr_textlogo_dark.png?updatedAt=1733435870334"
+                : 
+                "https://ik.imagekit.io/je4p51xox/pxr_textlogo_light.png?updatedAt=1733435843631"}>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Maintenance -->
+    <section data-current-section="s7">
+      <div id="section-6" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>
+        <div class="md:w-4/5 lg:w-3/5 mx-auto lg:flex flex-row gap-10">
+          <div class="w-full lg:w-2/4 mx-auto bg-[#9999990] content-center">
+            <h2 class={brightnessMode === "LIGHT" ? lightText : darkText}>
+              <span class="text-5xl font-bold">6. Maintenance</span>
+            </h2>
+            <p class="sm:text-xl xl:text-xl block my-4 ml-6">
+                <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
+                  Partner with Paradigm XR to turn your XR dreams into reality. We'll help you take your ideas from concept to a functional MVP [minimum viable product], with ongoing development services to scale your project as needed.
+                </span>
+            </p>
+          </div>
+          <!-- Text -->
+          <div class="w-11/12 lg:w-2/4 mx-auto bg-[#9999990] content-center">
+            <img 
+              class="w-full" 
+              alt="PXR Text Logo"
+              src={brightnessMode === "LIGHT" ? 
+                "https://ik.imagekit.io/je4p51xox/pxr_textlogo_dark.png?updatedAt=1733435870334"
+                : 
+                "https://ik.imagekit.io/je4p51xox/pxr_textlogo_light.png?updatedAt=1733435843631"}>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Contact Us -->
-    <section data-current-section="s4">
-      <div id="section-4" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>
+    <section data-current-section="s8">
+      <div id="section-8" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>
         <div class="md:w-4/5 lg:w-full mx-auto mb-8">
         <!-- Header -->
         <div class="text-center content-center">
@@ -369,22 +412,10 @@ getBrightnessMode();
     overflow: hidden; 
   }
   
-  /* Greetings Animation */
-  .color-header {
-    display: inline-block;
-    padding: 0.2em;
-  }
+  /* Animation */
   .greetings-anim-1 {
     opacity: 0;
     animation: greeting-slide-1 500ms cubic-bezier(0.075, 0.82, 0.165, 1) 1500ms forwards;
-  }
-  .greetings-anim-2 {
-    opacity: 0;
-    animation: greeting-slide-2 500ms cubic-bezier(0.075, 0.82, 0.165, 1) 2500ms forwards;
-  }
-  .greetings-anim-3 {
-    opacity: 0;
-    animation: greeting-slide-2 500ms cubic-bezier(0.075, 0.82, 0.165, 1) 3000ms forwards;
   }
   @keyframes greeting-slide-1 {
     0% {
@@ -395,16 +426,6 @@ getBrightnessMode();
       opacity: 1;
     }
   }
-  @keyframes greeting-slide-2 {
-    0% {
-      transform: translateX(50px);
-    }
-    100% {
-      transform: translateX(0px);
-      opacity: 1;
-    }
-  }
-  
   /* Snap Scrolling Indicator */
   #sectionation-lg {
       /* background: #b1b1b153; */
@@ -464,7 +485,11 @@ getBrightnessMode();
   #section-1,
   #section-2,
   #section-3,
-  #section-4
+  #section-4,
+  #section-5,
+  #section-6,
+  #section-7,
+  #section-8
    {
       width: 100%;
       height: 100vh;
@@ -474,13 +499,18 @@ getBrightnessMode();
       #wrapper,
       #section-1,
       #section-2,
-      #section-3 {
+      #section-3,
+      #section-4,
+      #section-5,
+      #section-6,
+      #section-7,
+      #section-8    {
           scroll-snap-type: none;
           scroll-snap-align: none;
           height: auto;
       }
   
-      #section-4 {
+      #section-8 {
           scroll-snap-type: none;
           scroll-snap-align: none;
           height: auto;
@@ -506,6 +536,8 @@ getBrightnessMode();
   input:focus, textarea:focus {
     border: 2px solid #999;
   }
+ 
   
-  </style>
+  
+</style>
   
