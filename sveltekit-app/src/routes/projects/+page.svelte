@@ -176,7 +176,7 @@ getBrightnessMode();
             : 
             "https://ik.imagekit.io/je4p51xox/pxr_textlogo_light.png?updatedAt=1733435843631"}>
             <h2 class={brightnessMode === "LIGHT" ? lightText : darkText}>
-              <span class="text-3xl font-bold">XR Application Production Process</span>
+              <span class="text-3xl font-bold">Projects</span>
             </h2>
             <p class="sm:text-xl xl:text-xl block my-4 ml-6 text-left">
                 <span class={brightnessMode === "LIGHT" ? lightText : darkText}>

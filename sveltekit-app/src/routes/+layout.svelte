@@ -1,7 +1,14 @@
 <script lang="ts">
 	import '../app.css';
 	let { children } = $props();
+  let activeLink = '/'; // Variable to store the active link
 
+  // Function to update the active link based on the current route
+  function handleNavigation() {
+    activeLink = window.location.pathname; 
+    console.log('Active Link: ' + activeLink);
+    
+  }
 	// TailWindCSS Classes
 	let lightNav = 'backdrop-blur-lg bg-[#fff]/30 h-16 drop-shadow-lg fixed w-full bottom-0 md:top-0 content-center z-50 transition duration-150';
 	let lightText = 'text-black transition duration-150';
@@ -39,10 +46,10 @@ getBrightnessMode();
 
   <!-- Navbar -->
 <div class={brightnessMode === "LIGHT" ? lightNav : darkNav}>
-    <div class="md:w-4/5 lg:w-3/5 mx-auto grid grid-cols-2 md:grid-cols-3">
+    <div class="md:w-4/5 lg:w-3/5 mx-auto grid grid-cols-2 md:grid-cols-2">
       <div class="col-span-1 content-center">
         <a 
-        href="#section-1">
+        href="/">
         <img 
           class="h-16" 
           alt="PXR Logo"
@@ -52,22 +59,23 @@ getBrightnessMode();
             "https://ik.imagekit.io/je4p51xox/pxr_logo_dark.png?updatedAt=1733432273575"}>
       </a>
       </div>
-      <div class="hidden md:block col-span-1 content-center">
-        <!-- Space that goes in between both sides -->
-      </div>
+     
       <div class="col-span-1 text-right content-center">
-        <a class="mx-1" href="/how-we-do" aria-label="How We Work Link">
+        <a class="mx-2.5 text-xs" href="/" aria-label="How We Work Link">
+            Home
+        </a>
+        <a class="mx-2.5 text-xs" href="/how-we-do" aria-label="How We Work Link">
             How We Work
         </a>
-        <a class="mx-1" href="#section-1" aria-label="Contact Me Link">
+        <a class="mx-2.5 text-xs" href="/projects" aria-label="Contact Me Link">
             Projects
         </a>
-        <a class="mx-1" href="#section-1" aria-label="Contact Me Link">
+        <a class="mx-2.5 text-xs" href="/about" aria-label="Contact Me Link">
             About Us
         </a>
         
         <button data-popover-target="popover-default" id="popover-trigger" aria-label="Light/Dark Button" class={brightnessMode === "LIGHT" ? lightText : darkText}  type="button">
-          <ion-icon class="text-2xl p-0.5 relative top-1"  name="moon-outline" ></ion-icon>
+          <ion-icon class="text-lg p-0.5 relative top-1"  name="moon-outline" ></ion-icon>
         </button>
 
         <div data-popover id="popover-default" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
@@ -96,3 +104,4 @@ getBrightnessMode();
 <style>
 	
 </style>
+<svelte:window on:load={handleNavigation} /> 
