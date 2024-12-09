@@ -1,29 +1,7 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
-
-    
-// #6 Dark / Light Mode
-/**
- * Check the user's device to see what their bightness mode is
- */
-let brightnessMode: string | null = null;
-function getBrightnessMode() {
-    // let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    // if(isDarkMode === false) {
-    //   brightnessMode = 'LIGHT'
-    // } else {
-    //   brightnessMode = 'DARK'
-    // }
-    // return isDarkMode;
-}
-function toggleBrightnessMode() {
-  if(brightnessMode === 'LIGHT') {
-      brightnessMode = 'DARK'
-    } else {
-      brightnessMode = 'LIGHT'
-    }
-}
-getBrightnessMode();
+  import { onMount } from 'svelte';
+  
+  let brightnessMode: string | null = null;
 
   /**
    * TailwindCSS Classes

@@ -1,51 +1,45 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import '../app.css';
+	import { writable } from 'svelte/store';
+  import { brightnessModelStore } from '$lib/stores/darkmode-store';
+  import { page } from '$app/stores'; 
 	let { children } = $props();
-  let activeLink = '/'; // Variable to store the active link
 
-  // Function to update the active link based on the current route
-  function handleNavigation() {
-    activeLink = window.location.pathname; 
-    console.log('Active Link: ' + activeLink);
-    
-  }
-	// TailWindCSS Classes
+	// TailWind$page.url.pathnames
+  let activeLink = 'text-md text-[#00CF68] mx-2 border-b-4 border-[#00CF68] transition duration-150';
+  let inactiveLink = 'text-md text-[#999] mx-2 transition duration-150';
+
 	let lightNav = 'backdrop-blur-lg bg-[#fff]/30 h-16 drop-shadow-lg fixed w-full bottom-0 md:top-0 content-center z-50 transition duration-150';
 	let lightText = 'text-black transition duration-150';
-	let lightBG = 'bg-[#fff] content-center transition duration-150';
-	let lightButton = 'bg-[#00000020] text-[#00CF68] hover:bg-[#00CF68] hover:text-[#fff] transition duration-1 py-1 px-4';
 
 	let darkText = 'text-white transition duration-150';
 	let darkNav = 'backdrop-blur-lg text-white bg-[#000]/70 h-16 drop-shadow-lg fixed w-full bottom-0 md:top-0 content-center z-50 transition duration-150';
-	let darkBG = 'bg-[#222] content-center transition duration-150';
-	let darkButton = 'bg-[#ffffff20] text-[#00CF68] hover:bg-[#00CF68] hover:text-[#fff] transition duration-1 py-1 px-4';
 
-// #6 Dark / Light Mode
-/**
- * Check the user's device to see what their bightness mode is
- */
-let brightnessMode: string | null = null;
-function getBrightnessMode() {
-    // let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    // if(isDarkMode === false) {
-    //   brightnessMode = 'LIGHT'
-    // } else {
-    //   brightnessMode = 'DARK'
-    // }
-    // return isDarkMode;
-}
-function toggleBrightnessMode() {
-  if(brightnessMode === 'LIGHT') {
-      brightnessMode = 'DARK'
-    } else {
-      brightnessMode = 'LIGHT'
-    }
-}
-getBrightnessMode();
+  /**
+   * Dark Mode
+   * Check the user's device to see what their bightness mode is
+   */
+   export const brightnessModel = writable();
+  function getInitialBrightnessModel() {
+    let isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'DARK' : 'LIGHT';
+    return isDarkMode
+  }
+  function toggleDarkModel() {
+    brightnessModelStore.update(currentModel => {
+      return currentModel === 'LIGHT' ? 'DARK' : 'LIGHT';
+    });
+  }
+
+  onMount(() => {
+    $brightnessModelStore = getInitialBrightnessModel();
+    console.log($brightnessModelStore.valueOf());
+	});
+
 </script>
 
   <!-- Navbar -->
-<div class={brightnessMode === "LIGHT" ? lightNav : darkNav}>
+<div class={$brightnessModelStore === "LIGHT" ? lightNav : darkNav}>
     <div class="md:w-4/5 lg:w-3/5 mx-auto grid grid-cols-2 md:grid-cols-2">
       <div class="col-span-1 content-center">
         <a 
@@ -53,7 +47,7 @@ getBrightnessMode();
         <img 
           class="h-16" 
           alt="PXR Logo"
-          src={brightnessMode === "LIGHT" ? 
+          src={$brightnessModelStore === "LIGHT" ? 
             "https://ik.imagekit.io/je4p51xox/pxr_logo_light.png?updatedAt=1733432273643"
             : 
             "https://ik.imagekit.io/je4p51xox/pxr_logo_dark.png?updatedAt=1733432273575"}>
@@ -61,21 +55,23 @@ getBrightnessMode();
       </div>
      
       <div class="col-span-1 text-right content-center">
-        <a class="mx-2.5 text-xs" href="/" aria-label="Home Link">
-            Home
+        <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
+          <a class={$page.url.pathname === '/' ? activeLink : inactiveLink} href="/" aria-label="Home Link">
+          HOME
         </a>
-        <a class="mx-2.5 text-xs" href="/process" aria-label="Process Link">
-          Process
+      </span>
+        <a class={$page.url.pathname === '/process' ? activeLink : inactiveLink} href="/process" aria-label="Process Link">
+          PROCESS
         </a>
-        <a class="mx-2.5 text-xs" href="/projects" aria-label="Projects Link">
-          Projects
+        <a class={$page.url.pathname === '/projects' ? activeLink : inactiveLink} href="/projects" aria-label="Projects Link">
+          PROJECTS
         </a>
-        <a class="mx-2.5 text-xs" href="/about" aria-label="About Us Link">
-          About Us
+        <a class={$page.url.pathname === '/about' ? activeLink : inactiveLink} href="/about" aria-label="About Us Link">
+          ABOUT US
         </a>
         
-        <button data-popover-target="popover-default" id="popover-trigger" aria-label="Light/Dark Button" class={brightnessMode === "LIGHT" ? lightText : darkText}  type="button">
-          <ion-icon class="text-lg p-0.5 relative top-1"  name="moon-outline" ></ion-icon>
+        <button data-popover-target="popover-default" id="popover-trigger" aria-label="Light/Dark Button" class={$brightnessModelStore === "LIGHT" ? lightText : darkText}  type="button">
+          <ion-icon class="text-lg lg:text-xl p-0.5 relative top-1"  name="moon-outline" ></ion-icon>
         </button>
 
         <div data-popover id="popover-default" role="tooltip" class="absolute z-10 invisible inline-block w-64 text-sm text-gray-500 transition-opacity duration-300 bg-white border border-gray-200 rounded-lg shadow-sm opacity-0 dark:text-gray-400 dark:border-gray-600 dark:bg-gray-800">
@@ -83,9 +79,9 @@ getBrightnessMode();
                 <h3 class="font-semibold text-gray-900 dark:text-white">Dark / Light Mode</h3>
             </div>
             <div class="px-3 py-2">
-                <p class="py-1">You are curretly in <b>{brightnessMode}</b> mode.</p>
+                <p class="py-1">You are curretly in <b>{$brightnessModel}</b> mode.</p>
                 <label class="inline-flex items-center cursor-pointer">
-                  <input on:click={toggleBrightnessMode} type="checkbox" value="" class="sr-only peer">
+                  <input onclick={toggleDarkModel} type="checkbox" value="" class="sr-only peer">
                   <div class="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"></div>
                   <span class="ms-3 text-sm font-medium text-gray-900 dark:text-gray-300">Toggle me</span>
                 </label>
@@ -99,9 +95,6 @@ getBrightnessMode();
 	{@render children()}
 </main>
   
-
-
 <style>
 	
 </style>
-<svelte:window on:load={handleNavigation} /> 
