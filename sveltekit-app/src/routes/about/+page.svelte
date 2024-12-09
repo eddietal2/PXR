@@ -60,8 +60,6 @@
       observer.observe(section);
     });
     }
-
-
   });
 </script>
 
@@ -93,21 +91,31 @@
       <div id="section-1" class={$brightnessModelStore === "LIGHT" ? lightBG : darkBG}>
         <div class="md:w-4/5 lg:w-3/5 mx-auto text-center">
           <div class="h-40 w-40 mx-auto">
-            <svg fill="#00CF68" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+            <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
               viewBox="0 0 502.643 502.643" xml:space="preserve">
+              <defs>
+                <linearGradient id="myGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                  {#if $brightnessModelStore === 'DARK'}
+                  <stop offset="50%" stop-color="#ffffff" />
+                  {:else}
+                  <stop offset="50%" stop-color="#111111" />
+                  {/if}
+                  <stop offset="100%" stop-color="#ffcb0a" />
+                </linearGradient>
+              </defs>
               <g>
                 <g>
-                  <path d="M251.256,237.591c37.166,0,67.042-30.048,67.042-66.977c0.043-37.037-29.876-66.999-67.042-66.999
+                  <path fill="url(#myGradient)" d="M251.256,237.591c37.166,0,67.042-30.048,67.042-66.977c0.043-37.037-29.876-66.999-67.042-66.999
                     c-36.908,0-66.869,29.962-66.869,66.999C184.387,207.587,214.349,237.591,251.256,237.591z"/>
-                  <path d="M305.032,248.506H197.653c-19.198,0-34.923,17.602-34.923,39.194v107.854c0,1.186,0.604,2.243,0.669,3.473h175.823
+                  <path fill="url(#myGradient)" d="M305.032,248.506H197.653c-19.198,0-34.923,17.602-34.923,39.194v107.854c0,1.186,0.604,2.243,0.669,3.473h175.823
                     c0.129-1.229,0.626-2.286,0.626-3.473V287.7C339.912,266.108,324.187,248.506,305.032,248.506z"/>
-                  <path d="M431.588,269.559c29.832,0,53.754-24.008,53.754-53.668s-23.922-53.711-53.754-53.711
+                  <path fill="url(#myGradient)" d="M431.588,269.559c29.832,0,53.754-24.008,53.754-53.668s-23.922-53.711-53.754-53.711
                     c-29.617,0-53.582,24.051-53.582,53.711C377.942,245.53,401.972,269.559,431.588,269.559z"/>
-                  <path d="M474.708,278.317h-86.046c-15.445,0-28.064,14.107-28.064,31.472v86.413c0,0.928,0.453,1.812,0.518,2.826h141.03
+                  <path fill="url(#myGradient)" d="M474.708,278.317h-86.046c-15.445,0-28.064,14.107-28.064,31.472v86.413c0,0.928,0.453,1.812,0.518,2.826h141.03
                     c0.065-1.014,0.496-1.898,0.496-2.826v-86.413C502.707,292.424,490.11,278.317,474.708,278.317z"/>
-                  <path d="M71.011,269.559c29.789,0,53.733-24.008,53.733-53.668S100.8,162.18,71.011,162.18c-29.638,0-53.603,24.051-53.603,53.711
+                  <path fill="url(#myGradient)" d="M71.011,269.559c29.789,0,53.733-24.008,53.733-53.668S100.8,162.18,71.011,162.18c-29.638,0-53.603,24.051-53.603,53.711
                     S41.373,269.559,71.011,269.559L71.011,269.559z"/>
-                  <path d="M114.109,278.317H27.977C12.576,278.317,0,292.424,0,309.789v86.413c0,0.928,0.453,1.812,0.539,2.826h141.03
+                  <path fill="url(#myGradient)" d="M114.109,278.317H27.977C12.576,278.317,0,292.424,0,309.789v86.413c0,0.928,0.453,1.812,0.539,2.826h141.03
                     c0.065-1.014,0.475-1.898,0.475-2.826v-86.413C142.087,292.424,129.489,278.317,114.109,278.317z"/>
                 </g>
                 <g>
@@ -143,22 +151,15 @@
               </g>
             </svg>
           </div>
-          <!-- <img 
-          class="w-1/2 mx-auto" 
-          alt="PXR Text Logo"
-          src={brightnessMode === "LIGHT" ? 
-            "https://ik.imagekit.io/je4p51xox/pxr_textlogo_dark.png?updatedAt=1733435870334"
-            : 
-            "https://ik.imagekit.io/je4p51xox/pxr_textlogo_light.png?updatedAt=1733435843631"}> -->
           <img 
-          class="w-1/2 mx-auto" 
+          class="w-1/3 mx-auto" 
           alt="PXR Text Logo"
           src={$brightnessModelStore === "LIGHT" ? 
             "https://ik.imagekit.io/je4p51xox/pxr_textlogo_dark.png?updatedAt=1733435870334"
             : 
             "https://ik.imagekit.io/je4p51xox/pxr_textlogo_light.png?updatedAt=1733435843631"}>
             <h2 class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
-              <span class="text-3xl font-bold">About</span>
+              <span class="text-xl lg:text-3xl text-[#ffcb0a] font-bold">About</span>
             </h2>
             <p class="sm:text-xl xl:text-xl block my-4 ml-6 text-left">
                 <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
