@@ -1,8 +1,6 @@
 <script lang="ts">
   import { onMount } from 'svelte';
-  
-  let brightnessMode: string | null = null;
-
+  import { brightnessModelStore } from '$lib/stores/darkmode-store';
   /**
    * TailwindCSS Classes
    */
@@ -24,9 +22,8 @@
 
   onMount(() => {
     setSnapScrolling();
-    setDailyDarkModePopover();
 
-    // #1 Snap Scroll Behavior Desktop
+    // Snap Scroll Behavior Desktop
     function setSnapScrolling() {
       const options = {
       root: document.getElementById('wrapper'), // Use a specific container as the viewport
@@ -66,7 +63,7 @@
     });
     }
 
-    // #3 Model Viewer Landing Header SVG Animation 
+    // Model Viewer Landing Header SVG Animation 
     const modelViewerParameters = document.querySelector("model-viewer#xr-devices-hero") as any;
       modelViewerParameters.addEventListener("load", (ev: any) => {
       // TODO: When this loads, hide loading
@@ -76,52 +73,33 @@
       
     })
 
-    // #7 Handle Project Description Popover
-    /**
-     * Show the Dark/Light mode popover for 5 seconds when the page loads. 
-     * I am doing this just to learn how to do it, and a small bit of UX in
-     * case someone refreshed they page. No need to see the popover again If you have already
-     * seen it once
-     */
-    function setDailyDarkModePopover() {
-      const popoverEl = document.getElementById('popover-default');
-      const popoverTrigger = document.getElementById('popover-trigger');
-
-      const today = new Date().toLocaleDateString();
-      const storageKey = `popoverShownToday-${today}`;
-      const hasShownToday = localStorage.getItem(storageKey);
-      localStorage.setItem(storageKey, 'true');
-
-    //   if (!hasShownToday) {
-    //     const popover = new Popover(popoverEl, popoverTrigger);
-    //     popover.show();
-    //     setTimeout(() => {
-    //       popover.hide();
-    //     }, 10000);
-    //   }
-    }
-
   });
 </script>
 
 <main>
  <!-- Section Nav (Desktop) -->
- <nav id="sectionation-lg" class={brightnessMode === "LIGHT" ? darkBG : lightBG}>
+ <nav id="sectionation-lg" class={$brightnessModelStore === "LIGHT" ? darkBG : lightBG}>
     <ul >
-        <li>
-            <div class="nav-bullet" data-current-section="s1" aria-label="First Section">
-              
-            </div>
-        </li>
-        <li>
-            <div class="nav-bullet" data-current-section="s2" aria-label="Second Section"></div>
-        </li>
-        <li>
-            <div class="nav-bullet" data-current-section="s3" aria-label="Third Section"></div>
-        </li>
-        <li>
-            <div class="nav-bullet" data-current-section="s4" aria-label="Fourth Section"></div>
-        </li>
+      <li>
+        <a href="#section-1" aria-label="First Section">
+          <div class="nav-bullet" data-current-section="s1"></div>
+        </a>
+    </li>
+    <li>
+      <a href="#section-2" aria-label="Second Section">
+        <div class="nav-bullet" data-current-section="s2"></div>
+      </a>
+    </li>
+    <li>
+      <a href="#section-3" aria-label="Third Section">
+        <div class="nav-bullet" data-current-section="s3"></div>
+      </a>
+    </li>
+    <li>
+      <a href="#section-4" aria-label="Fourth Section">
+        <div class="nav-bullet" data-current-section="s4"></div>
+      </a>
+    </li>
     </ul>
 </nav>
 
@@ -129,7 +107,7 @@
 
     <!-- Landing Intro -->
     <section data-current-section="s1">
-      <div id="section-1" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>
+      <div id="section-1" class={$brightnessModelStore === "LIGHT" ? lightBG : darkBG}>
         <div class="md:w-4/5 lg:w-3/5 mx-auto lg:flex flex-row gap-10">
           <!-- 3D Models -->
           <div class="w-full lg:w-2/4 mx-auto bg-[#9999990] content-center">
@@ -149,7 +127,7 @@
             <img 
               class="w-full" 
               alt="PXR Text Logo"
-              src={brightnessMode === "LIGHT" ? 
+              src={$brightnessModelStore === "LIGHT" ? 
                 "https://ik.imagekit.io/je4p51xox/pxr_textlogo_dark.png?updatedAt=1733435870334"
                 : 
                 "https://ik.imagekit.io/je4p51xox/pxr_textlogo_light.png?updatedAt=1733435843631"}>
@@ -163,7 +141,7 @@
               </span>
               <br>
               <span class="sm:text-xl xl:text-xl block my-4 ml-6">
-                <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
+                <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
                   Partner with Paradigm XR to turn your XR dreams into reality. We'll help you take your ideas from concept to a functional MVP [minimum viable product], with ongoing development services to scale your project as needed.
                 </span>
             </p>
@@ -177,12 +155,12 @@
     
     <!-- Our Services-->
     <section data-current-section="s2">
-      <div id="section-2" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>
+      <div id="section-2" class={$brightnessModelStore === "LIGHT" ? lightBG : darkBG}>
         <div class="md:w-4/5 lg:w-3/5 p-4 mx-auto">
           <!-- Header -->
           <div class="mt-20 md:mt-0">
-              <h1 class={brightnessMode === "LIGHT" ? lightHeader : darkHeader}>
-                <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
+              <h1 class={$brightnessModelStore === "LIGHT" ? lightHeader : darkHeader}>
+                <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
                   OUR SERVICES
                 </span>
                 <a href="#section-4" 
@@ -200,11 +178,11 @@
             <div class="grid grid-cols-3 gap-4 pt-4">
               <div class="bg-[#99999910] text-white p-4">
                 <div class="text-center">
-                  <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
+                  <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
                     <ion-icon style="font-size: 70px;"  name="pencil-outline"></ion-icon>
                   </span>
                   <h2 class="font-bold text-3xl text-left mt-4 text-[#00CF68]">Design</h2>
-                  <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
+                  <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
                     <p class="text-left text-md">Just as an architect meticulously plans before construction begins, Paradigm XR's design team lays the foundation for captivating XR experiences.  We blend UX/UI, interaction, 3D, and graphic design to craft intuitive and visually stunning solutions.
                     </p>
                   </span>                
@@ -212,11 +190,11 @@
               </div>
               <div class="bg-[#99999910] text-white p-4">
                 <div class="text-center">
-                  <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
+                  <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
                     <ion-icon style="font-size: 70px;"  name="code-slash-outline"></ion-icon>
                   </span>
                   <h2 class="font-bold text-3xl text-left mt-4 text-[#00CF68]">Development</h2>
-                  <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
+                  <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
                     <p class="text-left text-md">Just as a skilled construction crew brings an architect's blueprint to life, Paradigm XR's development team builds high-performance applications for iOS, Android, and Meta Quest powered by 
                       <a href="https://www.unrealengine.com/en-US" class="text-[#00CF68] hover:border-bottom" target="_blank">
                         Unreal Engine.
@@ -227,11 +205,11 @@
               </div>
               <div class="bg-[#99999910] text-white p-4">
                 <div class="text-center">
-                  <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
+                  <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
                     <ion-icon style="font-size: 70px;"  name="bulb-outline"></ion-icon>
                   </span>
                   <h2 class="font-bold text-3xl text-left mt-4 text-[#00CF68]">Consultation</h2>
-                  <span class={brightnessMode === "LIGHT" ? lightText : darkText}>
+                  <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
                     <p class="text-left text-md">Facing challenges in your XR journey? Paradigm XR's consultants provide strategic guidance and solutions to overcome obstacles and achieve your project objectives. We'll help you navigate technology choices, optimize development workflows, and ensure your XR experience delivers exceptional results.</p>
                   </span>                
                 </div>
@@ -244,10 +222,10 @@
 
     <!-- Projects -->
     <section data-current-section="s3">
-      <div id="section-3" class={brightnessMode === "LIGHT" ? lightBG : darkBG}>
+      <div id="section-3" class={$brightnessModelStore === "LIGHT" ? lightBG : darkBG}>
         <!-- Header -->
         <div class="md:w-4/5 lg:w-3/5 mx-auto content-center">
-          <h1 class={brightnessMode === "LIGHT" ? lightHeader : darkHeader}>
+          <h1 class={$brightnessModelStore === "LIGHT" ? lightHeader : darkHeader}>
             LATEST PROJECT
             
             <img 
@@ -263,7 +241,7 @@
           </a>
           <span class="float-right text-[#ffffff20]">|</span>
           <button 
-            data-popover-target="popover-description" type="button" class={brightnessMode === "LIGHT" ? lightButton : darkButton}>
+            data-popover-target="popover-description" type="button" class={$brightnessModelStore === "LIGHT" ? lightButton : darkButton}>
             Project Summary
           </button>
           </h1>
@@ -273,10 +251,10 @@
         <div class="md:w-4/5 lg:w-3/5 mx-auto">
           <div class="relative">
               <span class="p-2 absolute top-0 right-0">
-                  <button class={brightnessMode === "LIGHT" ? lightButton : darkButton}>
+                  <button class={$brightnessModelStore === "LIGHT" ? lightButton : darkButton}>
                     <a target="_blank">Link</a>
                   </button>
-                  <button data-popover-target="popover-description" type="button" class={brightnessMode === "LIGHT" ? lightButton : darkButton}>Description
+                  <button data-popover-target="popover-description" type="button" class={$brightnessModelStore === "LIGHT" ? lightButton : darkButton}>Description
                     
                   </button>
               </span>
@@ -294,20 +272,20 @@
 
     <!-- Contact Us -->
     <section data-current-section="s4">
-      <div id="section-4" class={brightnessMode === "LIGHT" ? lightBGFooter : darkBGFooter}>
+      <div id="section-4" class={$brightnessModelStore === "LIGHT" ? lightBGFooter : darkBGFooter}>
         <div class="md:w-4/5 lg:w-full mx-auto mb-8">
         <!-- Header -->
         <div class="text-center content-center">
           <div class="inline-block mx-auto p-2 border border-[#ffcb0a] bg-[#ffcb0a]/20 text-xl">
-            <h1 class={brightnessMode === "LIGHT" ? lightText : darkText}>Connect with us for a Free Consultation!</h1>
+            <h1 class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>Connect with us for a Free Consultation!</h1>
           </div>
-          <span style="font-size: 5em;" class={brightnessMode === "LIGHT" ? lightText : darkText}>
+          <span style="font-size: 5em;" class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
           <!-- PXR Logo -->
           
           <img 
           class="h-32 mx-auto" 
           alt="PXR Logo"
-          src={brightnessMode === "LIGHT" ? 
+          src={$brightnessModelStore === "LIGHT" ? 
             "https://ik.imagekit.io/je4p51xox/pxr_logo_light.png?updatedAt=1733432273643"
             : 
             "https://ik.imagekit.io/je4p51xox/pxr_logo_dark.png?updatedAt=1733432273575"}>
@@ -323,16 +301,16 @@
           <!-- https://formsubmit.co/ -->
           <!-- https://www.youtube.com/watch?v=iSobU_DjNN4 -->
           <form action="https://formsubmit.co/f6e4bbd318fdd3193043ce91e88f6bfd" method="POST">
-            <span class={brightnessMode === "LIGHT" ? lightInput : darkInput}>
+            <span class={$brightnessModelStore === "LIGHT" ? lightInput : darkInput}>
             <input class="w-full my-1 h-10 p-2" type="text" style="background: none;" required placeholder="First & Last Name" name="name">
             </span>
-            <span class={brightnessMode === "LIGHT" ? lightInput : darkInput}>
+            <span class={$brightnessModelStore === "LIGHT" ? lightInput : darkInput}>
             <input class="w-full my-1 h-10 p-2" type="text" style="background: none;" required placeholder="Email Address" name="email">
             </span>
-            <span class={brightnessMode === "LIGHT" ? lightInput : darkInput}>
+            <span class={$brightnessModelStore === "LIGHT" ? lightInput : darkInput}>
             <textarea class="my-1 mx-auto p-2 w-full" style="background: none;" rows="6" required placeholder="Want to collaborate or have a suggestion?" name="message"></textarea>
             </span>
-            <button class={brightnessMode === "LIGHT" ? lightButton : darkButton} type="submit">
+            <button class={$brightnessModelStore === "LIGHT" ? lightButton : darkButton} type="submit">
               SEND MESSAGE
             </button>
           </form>

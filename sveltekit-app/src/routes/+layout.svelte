@@ -41,6 +41,7 @@
   <!-- Navbar -->
 <div class={$brightnessModelStore === "LIGHT" ? lightNav : darkNav}>
     <div class="md:w-4/5 lg:w-3/5 mx-auto grid grid-cols-2 md:grid-cols-2">
+      <!-- Logo -->
       <div class="col-span-1 content-center">
         <a 
         href="/">
@@ -53,7 +54,7 @@
             "https://ik.imagekit.io/je4p51xox/pxr_logo_dark.png?updatedAt=1733432273575"}>
       </a>
       </div>
-     
+      <!-- Links -->
       <div class="col-span-1 text-right content-center">
         <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
           <a class={$page.url.pathname === '/' ? activeLink : inactiveLink} href="/" aria-label="Home Link">
@@ -91,10 +92,7 @@
       </div>
     </div>
 </div>
- <main>
+<main>
 	{@render children()}
 </main>
-  
-<style>
-	
-</style>
+

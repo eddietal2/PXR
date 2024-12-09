@@ -66,7 +66,7 @@
 <main>
  <!-- Section Nav (Desktop) -->
  <nav id="sectionation-lg" class={$brightnessModelStore === "LIGHT" ? darkBG : lightBG}>
-  <ul >
+  <ul>
     <li>
         <a href="#section-1" aria-label="First Section">
           <div class="nav-bullet" data-current-section="s1"></div>
