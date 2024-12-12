@@ -344,7 +344,7 @@
   }
   @media (max-width: 1000px)  {
       #sectionation-lg{
-          display: none;
+          /* display: none; */
       }
   }
   @keyframes nav-change-section {
@@ -393,13 +393,7 @@
           scroll-snap-align: none;
           height: auto;
       }
-  
-      #section-8 {
-          scroll-snap-type: none;
-          scroll-snap-align: none;
-          height: auto;
-          padding: 10em 0 5em 0;
-      }
+
   }
   
   /* Projects */

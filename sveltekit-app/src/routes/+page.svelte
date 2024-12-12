@@ -108,7 +108,7 @@
     <!-- Landing Intro -->
     <section data-current-section="s1">
       <div id="section-1" class={$brightnessModelStore === "LIGHT" ? lightBG : darkBG}>
-        <div class="md:w-4/5 lg:w-3/5 mx-auto lg:flex flex-row gap-10">
+        <div class="md:w-4/5 lg:w-3/5 mt-20 lg:mt-0 mx-auto lg:flex flex-row gap-10">
           <!-- 3D Models -->
           <div class="w-full lg:w-2/4 mx-auto bg-[#9999990] content-center">
             <model-viewer 
@@ -123,7 +123,7 @@
             </model-viewer>
           </div>
           <!-- Text -->
-          <div class="w-11/12 lg:w-2/4 mx-auto bg-[#9999990]">
+          <div class="w-11/12 lg:w-2/4 pb-40 lg:pb-0 mx-auto bg-[#9999990]">
             <img 
               class="w-full" 
               alt="PXR Text Logo"
@@ -175,7 +175,7 @@
               <li>Web Development</li>
               <li>Consultation</li>
             </ul> -->
-            <div class="grid grid-cols-3 gap-4 pt-4">
+            <div class="lg:grid lg:grid-cols-3 lg:gap-4 pt-4">
               <div class="bg-[#99999910] text-white p-4">
                 <div class="text-center">
                   <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
@@ -226,7 +226,9 @@
         <!-- Header -->
         <div class="md:w-4/5 lg:w-3/5 mx-auto content-center">
           <h1 class={$brightnessModelStore === "LIGHT" ? lightHeader : darkHeader}>
-            LATEST PROJECT
+            <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
+              LATEST PROJECT
+            </span>
             
             <img 
             src="https://ik.imagekit.io/2ax1lblqa/Slice_1__1_-removebg-preview.png?updatedAt=1732343747682" 
@@ -240,10 +242,10 @@
             HARP Website
           </a>
           <span class="float-right text-[#ffffff20]">|</span>
-          <button 
+          <!-- <button 
             data-popover-target="popover-description" type="button" class={$brightnessModelStore === "LIGHT" ? lightButton : darkButton}>
             Project Summary
-          </button>
+          </button> -->
           </h1>
           
         </div>
@@ -399,7 +401,7 @@
   }
   @media (max-width: 1000px)  {
       #sectionation-lg{
-          display: none;
+          /* display: none; */
       }
   }
   @keyframes nav-change-section {
@@ -438,7 +440,7 @@
        {
           scroll-snap-type: none;
           scroll-snap-align: none;
-          height: auto;
+          height: 100vh;
       }
   
       #section-4 {
