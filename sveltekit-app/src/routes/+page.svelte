@@ -1,6 +1,8 @@
 <script lang="ts">
   import { onMount } from 'svelte';
   import { brightnessModelStore } from '$lib/stores/darkmode-store';
+
+  let metaQuestWebsiteLink = 'https://www.meta.com/quest/quest-3/?utm_source=gg&utm_medium=ps&utm_campaign=18854243668&utm_term=meta%20quest&utm_content=714674249906&utm_ad=149056889952&utm_location=9016891&utm_location2=&utm_placement=kwd-1459933427178&utm_device=c&utm_matchtype=e&utm_feed=&utm_adposition=&utm_product=&&gad_source=1&gclid=Cj0KCQiAsOq6BhDuARIsAGQ4-zgfZnIpJ94RoWh822Rv7F5f1ELKQ7jKmN-zVvC-RvkkV08dFjQEWCQaAgdGEALw_wcB&gclsrc=aw.ds'
   /**
    * TailwindCSS Classes
    */
@@ -108,7 +110,7 @@
     <!-- Landing Intro -->
     <section data-current-section="s1">
       <div id="section-1" class={$brightnessModelStore === "LIGHT" ? lightBG : darkBG}>
-        <div class="md:w-4/5 lg:w-3/5 mt-20 lg:mt-0 mx-auto lg:flex flex-row gap-10">
+        <div class="sm:w-11/12 md:w-4/5 lg:w-3/5 mt-20 lg:mt-0 mx-auto lg:flex flex-row gap-10">
           <!-- 3D Models -->
           <div class="w-full lg:w-2/4 mx-auto bg-[#9999990] content-center">
             <model-viewer 
@@ -123,7 +125,7 @@
             </model-viewer>
           </div>
           <!-- Text -->
-          <div class="w-11/12 lg:w-2/4 pb-40 lg:pb-0 mx-auto bg-[#9999990]">
+          <div class="lg:w-2/4 pb-40 lg:pb-0 mx-auto bg-[#9999990]">
             <img 
               class="w-full" 
               alt="PXR Text Logo"
@@ -146,7 +148,7 @@
                 </span>
             </p>
             <a href="#section-4" 
-              class="ml-6 mt-4 text-[#00CF68] border-2 border-[#00CF68] p-2 font-bold hover:bg-[#00CF6820] hover:text-[#fff]">CONTACT US
+              class="block text-center ml-6 mt-4 text-[#fff] border-2 border-[#fff] p-2 font-bold hover:bg-[#00CF6820] hover:text-[#fff]">CONTACT US
             </a>
           </div>
         </div>
@@ -163,54 +165,54 @@
                 <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
                   OUR SERVICES
                 </span>
-                <a href="#section-4" 
-                  class="float-right text-xs text-[#00CF68] p-2 font-bold hover:bg-[#00CF6820] hover:text-[#fff]">CONTACT US
+                <a href="/contact" aria-label="About Us Link" class="float-right text-xs mt-2 mr-2">
+                  <span class="px-1 py-0.5 border-2 border-[#00CF68] text-[#00CF68] hover:border-[#ffcb0a] hover:text-[#ffcb0a] transition duration-150">
+                    FREE CONSULTATION
+                  </span>
                 </a>
               </h1>
           </div>
           <!-- Services -->
           <div class="content-center">
-            <!-- <ul class={brightnessMode === "LIGHT" ? lightText : darkText}>
-              <li>VR, AR, and MR Development</li>
-              <li>Web Development</li>
-              <li>Consultation</li>
-            </ul> -->
             <div class="lg:grid lg:grid-cols-3 lg:gap-4 pt-4">
+              <!-- Design -->
               <div class="bg-[#99999910] text-white p-4">
                 <div class="text-center">
                   <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
                     <ion-icon style="font-size: 70px;"  name="pencil-outline"></ion-icon>
                   </span>
-                  <h2 class="font-bold text-3xl text-left mt-4 text-[#00CF68]">Design</h2>
+                  <h2 class="font-bold text-xl text-left mt-4 text-[#00CF68]">Design</h2>
                   <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
-                    <p class="text-left text-md">Just as an architect meticulously plans before construction begins, Paradigm XR's design team lays the foundation for captivating XR experiences.  We blend UX/UI, interaction, 3D, and graphic design to craft intuitive and visually stunning solutions.
+                    <p class="text-left text-sm lg:text-md">Just as an architect meticulously plans before construction begins, Paradigm XR's design team lays the foundation for captivating XR experiences.  We blend UX/UI, interaction, 3D, and graphic design to craft intuitive and visually stunning solutions.
                     </p>
                   </span>                
                 </div>
               </div>
+              <!-- Development -->
               <div class="bg-[#99999910] text-white p-4">
                 <div class="text-center">
                   <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
                     <ion-icon style="font-size: 70px;"  name="code-slash-outline"></ion-icon>
                   </span>
-                  <h2 class="font-bold text-3xl text-left mt-4 text-[#00CF68]">Development</h2>
+                  <h2 class="font-bold text-xl text-left mt-4 text-[#00CF68]">Development</h2>
                   <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
-                    <p class="text-left text-md">Just as a skilled construction crew brings an architect's blueprint to life, Paradigm XR's development team builds high-performance applications for iOS, Android, and Meta Quest powered by 
-                      <a href="https://www.unrealengine.com/en-US" class="text-[#00CF68] hover:border-bottom" target="_blank">
+                    <p class="text-left text-sm lg:text-md">Just as a skilled construction crew brings an architect's blueprint to life, Paradigm XR's development team builds high-performance applications for iOS, Android, and Meta Quest powered by 
+                      <a href="https://www.unrealengine.com/en-US" class="text-[#00CF68] py-0.5 hover:text-[#ffcb0a] hover:border-b-2 hover:border-[#ffcb0a] transition duration-150" target="_blank">
                         Unreal Engine.
                       </a>
                     </p>
                   </span>
                 </div>
               </div>
+              <!-- Consultation -->
               <div class="bg-[#99999910] text-white p-4">
                 <div class="text-center">
                   <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
                     <ion-icon style="font-size: 70px;"  name="bulb-outline"></ion-icon>
                   </span>
-                  <h2 class="font-bold text-3xl text-left mt-4 text-[#00CF68]">Consultation</h2>
+                  <h2 class="font-bold text-xl text-left mt-4 text-[#00CF68]">Consultation</h2>
                   <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
-                    <p class="text-left text-md">Facing challenges in your XR journey? Paradigm XR's consultants provide strategic guidance and solutions to overcome obstacles and achieve your project objectives. We'll help you navigate technology choices, optimize development workflows, and ensure your XR experience delivers exceptional results.</p>
+                    <p class="text-left text-sm lg:text-md">Facing challenges in your XR journey? Paradigm XR's consultants provide strategic guidance and solutions to overcome obstacles and achieve your project objectives. We'll help you navigate technology choices, optimize development workflows, and ensure your XR experience delivers exceptional results.</p>
                   </span>                
                 </div>
               </div>
@@ -224,51 +226,54 @@
     <section data-current-section="s3">
       <div id="section-3" class={$brightnessModelStore === "LIGHT" ? lightBG : darkBG}>
         <!-- Header -->
-        <div class="md:w-4/5 lg:w-3/5 mx-auto content-center">
+        <div class="md:w-4/5 lg:w-3/5 p-4 lg:p-4 lg:px-0 mx-auto content-center">
           <h1 class={$brightnessModelStore === "LIGHT" ? lightHeader : darkHeader}>
             <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
-              LATEST PROJECT
+              LATEST PROJECTS
             </span>
-            
-            <img 
-            src="https://ik.imagekit.io/2ax1lblqa/Slice_1__1_-removebg-preview.png?updatedAt=1732343747682" 
-            class="p-2 h-10 float-right" 
-            alt="Project Logo">
-          <a
-            href="https://www.harp-rose.org/"
-            class="float-right text-xs text-[#00CF68] p-2 font-bold hover:bg-[#00CF6820] hover:text-[#fff]"
-            target="_blank"
-            >
-            HARP Website
-          </a>
-          <span class="float-right text-[#ffffff20]">|</span>
-          <!-- <button 
-            data-popover-target="popover-description" type="button" class={$brightnessModelStore === "LIGHT" ? lightButton : darkButton}>
-            Project Summary
-          </button> -->
           </h1>
           
         </div>
         <!-- Project -->
-        <div class="md:w-4/5 lg:w-3/5 mx-auto">
-          <div class="relative">
-              <span class="p-2 absolute top-0 right-0">
-                  <button class={$brightnessModelStore === "LIGHT" ? lightButton : darkButton}>
-                    <a target="_blank">Link</a>
-                  </button>
-                  <button data-popover-target="popover-description" type="button" class={$brightnessModelStore === "LIGHT" ? lightButton : darkButton}>Description
-                    
-                  </button>
-              </span>
-
+        <div class="md:w-4/5 lg:w-3/5 mx-auto lg:grid lg:grid-cols-2 lg:gap-8 content-center">
+          <!-- Video -->
+          <div class="relative content-center">
             <!-- svelte-ignore a11y_media_has_caption -->
             <video 
               src="https://ik.imagekit.io/je4p51xox/videos/Harp_Init_Demo%20-%20Made%20with%20Clipchamp%20(2).mp4?updatedAt=1733445896479" 
               autoplay
-
+              controls
             >
           </div>
+          <!-- Text -->
+          <div>
+            <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
+              <img 
+              src="https://ik.imagekit.io/2ax1lblqa/Slice_1__1_-removebg-preview.png?updatedAt=1732343747682" 
+              class="h-20" 
+              alt="Project Logo">
+              <h1 class="text-3xl font-bold text-[#00CF68]">HARP</h1>
+              <a aria-label="Meta Quest Website" target="_blank" href={metaQuestWebsiteLink} class="bg-[#ffcb0a]/10 mt-1 p-1 inline-block hover:border-b-2 hover:border-[#ffcb0a] hover:text-[#ffcb0a] transition duration-150">
+                <!-- Meta Logo -->
+                <svg class="h-4 inline-block" fill="#fff" viewBox="0 0 32 32" version="1.1">
+                  <path 
+                  stroke={$brightnessModelStore === 'DARK'? "#ffcb0a" : "#111"}
+                  fill={$brightnessModelStore === 'DARK'? "#ffcb0a" : "#111"}
+                  d="M5,19.5c0-4.6,2.3-9.4,5-9.4c1.5,0,2.7,0.9,4.6,3.6c-1.8,2.8-2.9,4.5-2.9,4.5c-2.4,3.8-3.2,4.6-4.5,4.6  C5.9,22.9,5,21.7,5,19.5 M20.7,17.8L19,15c-0.4-0.7-0.9-1.4-1.3-2c1.5-2.3,2.7-3.5,4.2-3.5c3,0,5.4,4.5,5.4,10.1  c0,2.1-0.7,3.3-2.1,3.3S23.3,22,20.7,17.8 M16.4,11c-2.2-2.9-4.1-4-6.3-4C5.5,7,2,13.1,2,19.5c0,4,1.9,6.5,5.1,6.5  c2.3,0,3.9-1.1,6.9-6.3c0,0,1.2-2.2,2.1-3.7c0.3,0.5,0.6,1,0.9,1.6l1.4,2.4c2.7,4.6,4.2,6.1,6.9,6.1c3.1,0,4.8-2.6,4.8-6.7  C30,12.6,26.4,7,22.1,7C19.8,7,18,8.8,16.4,11"/>
+                </svg>
+                <span class={$brightnessModelStore === 'DARK'? "text-[#ffcb0a] text-sm font-bold" : "text-[#111] text-sm font-bold"}>QUEST 2-3</span>
+              </a>
+              <a aria-label="Meta Quest Website" target="_blank" href={metaQuestWebsiteLink} class="bg-[#ffcb0a]/10 mt-1 p-1 inline-block hover:border-b-2 hover:border-[#ffcb0a] hover:text-[#ffcb0a] transition duration-150">
+                <span class={$brightnessModelStore === 'DARK'? "text-[#ffcb0a] text-sm font-bold" : "text-[#111] text-sm font-bold"}>PROJECT WEBSITE</span>
+              </a>
+              <p class="lg:mt-2 lg:pt-2 lg:border-t-2 border-[#99999980]">
+                Facing challenges in your XR journey? Paradigm XR's consultants provide strategic guidance and solutions to overcome obstacles and achieve your project objectives. We'll help you navigate technology choices, optimize development workflows, and ensure your XR experience delivers exceptional results.
+              </p>
+            </span>
+          </div>
         </div>
+        <!-- TODO: Slider Buttons -->
+         <div class="md:w-4/5 lg:w-3/5 mx-auto mt-8 h-20 bg-[#111]"></div>
       </div>
     </section>
 
@@ -440,32 +445,20 @@
        {
           scroll-snap-type: none;
           scroll-snap-align: none;
-          height: 100vh;
+          height: 100%;
       }
   
       #section-4 {
           padding: 10em 0 5em 0;
       }
   }
-  
-  /* Projects */
-  #popover {
-    /* Style the popover as you wish */
-    position: absolute;
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 10px;
-    display: none;
-  }
-  
-  #popover:target {
-    display: block;
-  }
+
+
   
   /* Contact Form */
   input:focus, textarea:focus {
     border: 2px solid #999;
   }
   
-  </style>
+</style>
   
