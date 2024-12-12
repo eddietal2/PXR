@@ -143,7 +143,7 @@
           </div>
           <!-- Image -->
           <div class="w-1/2 lg:w-2/4 mt-20 lg:mt-0 mx-auto bg-[#9999990] content-center">
-            <div class="h-full w-1/2 mx-auto">
+            <div class="h-full w-1/2 mx-auto content-center">
                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
                   viewBox="0 0 513.856 513.855"
                   xml:space="preserve">

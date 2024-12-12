@@ -202,7 +202,7 @@
           </div>
           <!-- Image -->
           <div class="w-1/2 lg:w-2/4 mt-20 lg:mt-0 mx-auto bg-[#9999990] content-center">
-            <div class="h-full w-1/2 mx-auto">
+            <div class="h-full w-1/2 mx-auto content-center">
                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
                   viewBox="0 0 513.856 513.855"
                   xml:space="preserve">
@@ -268,7 +268,7 @@
           </div>
           <!-- Image -->
           <div class="w-1/2 lg:w-2/4 mt-20 lg:mt-0 mx-auto bg-[#9999990] content-center">       
-            <div class="h-full w-1/2 mx-auto">
+            <div class="h-full w-1/2 mx-auto content-center">
               <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
                 viewBox="0 0 415.881 415.881"
                 xml:space="preserve">
@@ -316,7 +316,7 @@
           </div>
           <!-- Image -->
           <div class="w-1/2 lg:w-2/4 mx-auto bg-[#9999990] content-center">
-            <div class="h-full w-1/2 mt-20 lg:mt-0 mx-auto">
+            <div class="h-full w-1/2 mt-20 lg:mt-0 mx-auto content-center">
               <svg viewBox="0 0 375 334" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="375" height="334" />
                 <g fill={$brightnessModelStore === 'DARK'? "#ffffff80" : "#11111180"} clip-path="url(#clip0_363_494)">
@@ -397,7 +397,7 @@
             </p>
           </div>
           <div class="w-1/2 lg:w-2/4 mx-auto bg-[#9999990] content-center">
-            <div class="h-full w-1/2 mt-20 lg:mt-0 mx-auto">
+            <div class="h-full w-1/2 mt-20 lg:mt-0 mx-auto content-center">
               <svg viewBox="-0.95 0 117.858 117.858" xmlns="http://www.w3.org/2000/svg">
 
                 <g transform="translate(-33.522 -376.821)"> 
@@ -435,7 +435,7 @@
           </div>
           <!-- Image -->
           <div class="w-1/2 lg:w-2/4 mx-auto bg-[#9999990] content-center">
-            <div class="h-full w-1/2 mt-20 lg:mt-0 mx-auto">
+            <div class="h-full w-1/2 mt-20 lg:mt-0 mx-auto content-center">
               <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
                 viewBox="0 0 512 512" xml:space="preserve">
               <polygon style="fill:#00CF68;" points="121.796,269.608 73.119,344.219 167.78,438.881 242.391,390.203 "/>
@@ -480,7 +480,7 @@
             </p>
           </div>
           <div class="w-1/2 lg:w-2/4 mx-auto bg-[#9999990] content-center">
-            <div class="h-full w-1/2 my-20 lg:mt-0  mx-auto">
+            <div class="h-full w-1/2 my-20 lg:mt-0 mx-auto content-center">
               <svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
                 viewBox="0 0 32 32" xml:space="preserve">
               <style type="text/css">
