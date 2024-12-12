@@ -172,21 +172,9 @@
               </g>
             </svg>
           </div>
-          <img 
-          class="w-1/3 mx-auto" 
-          alt="PXR Text Logo"
-          src={$brightnessModelStore === "LIGHT" ? 
-            "https://ik.imagekit.io/je4p51xox/pxr_textlogo_dark.png?updatedAt=1733435870334"
-            : 
-            "https://ik.imagekit.io/je4p51xox/pxr_textlogo_light.png?updatedAt=1733435843631"}>
-            <h2 class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
-              <span class="text-xl lg:text-3xl text-[#ffcb0a] font-bold">About</span>
-            </h2>
-            <p class="sm:text-xl xl:text-xl block my-4 ml-6 text-left">
-                <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
-                  Partner with Paradigm XR to turn your XR dreams into reality. We'll help you take your ideas from concept to a functional MVP [minimum viable product], with ongoing development services to scale your project as needed.
-                </span>
-            </p>
+          <h2 class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
+            <span class="text-xl lg:text-3xl text-[#ffcb0a] font-bold">#ABOUT</span>
+          </h2>
         </div>
       </div>
     </section>
@@ -200,7 +188,7 @@
               <h2 class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>{team[0].name}</h2>
             </span>
             <p class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
-              <span class="bg-[#ffcb0a]/10 border-[#ffcb0a] border-2 p-2 mt-1 inline-block">{team[0].role}</span>
+              <span class="bg-[#ffcb0a]/10 border-[#ffcb0a] border-2 px-1 py-0.5 mt-1 inline-block">{team[0].role}</span>
             </p>
             <p class="sm:text-xl xl:text-xl block my-4">
                 <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
@@ -227,7 +215,7 @@
               <h2 class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>{team[0].name}</h2>
             </span>
             <p class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
-              <span class="bg-[#ffcb0a]/10 border-[#ffcb0a] border-2 p-2 mt-1 inline-block">{team[0].role}</span>
+              <span class="bg-[#ffcb0a]/10 border-[#ffcb0a] border-2 px-1 py-0.5 mt-1 inline-block">{team[0].role}</span>
             </p>
             <p class="sm:text-xl xl:text-xl block my-4">
                 <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>

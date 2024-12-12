@@ -38,8 +38,10 @@
 
 </script>
 
+
+<main>
   <!-- Navbar -->
-<div class={$brightnessModelStore === "LIGHT" ? lightNav : darkNav}>
+  <div class={$brightnessModelStore === "LIGHT" ? lightNav : darkNav}>
     <div class="px-4 lg:px-0 md:w-4/5 lg:w-3/5 mx-auto grid grid-cols-2 md:grid-cols-[20%_80%]">
       <!-- Logo -->
       <div>
@@ -102,16 +104,15 @@
         </div>
       </div>
       <!-- Mobile Hamburger Menu -->
-       <div class="inline-block md:hidden text-right content-center">
+      <div class="inline-block md:hidden text-right content-center">
         <svg xmlns="http://www.w3.org/2000/svg" class="float-right h-8" viewBox="0 0 512 512">
           <path 
             fill={$brightnessModelStore === 'DARK'? "#ffcb0a" : "#11111150"}
             stroke={$brightnessModelStore === 'DARK'? "#ffcb0a" : "#11111"} stroke-linecap="round" stroke-miterlimit="10" stroke-width="32" d="M80 160h352M80 256h352M80 352h352"/>
         </svg>
-       </div>
+      </div>
     </div>
-</div>
-<main>
+  </div>
 	{@render children()}
 </main>
 
