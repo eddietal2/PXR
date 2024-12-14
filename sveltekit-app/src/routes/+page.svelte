@@ -158,7 +158,7 @@
     <!-- Our Services-->
     <section data-current-section="s2">
       <div id="section-2" class={$brightnessModelStore === "LIGHT" ? lightBG : darkBG}>
-        <div class="md:w-4/5 lg:w-3/5 p-4 mx-auto">
+        <div class="md:w-4/5 lg:w-3/5 p-4 mx-auto mb-20 lg:mb-0">
           <!-- Header -->
           <div class="mt-20 md:mt-0">
               <h1 class={$brightnessModelStore === "LIGHT" ? lightHeader : darkHeader}>
@@ -176,7 +176,7 @@
           <div class="content-center">
             <div class="lg:grid lg:grid-cols-3 lg:gap-4 pt-4">
               <!-- Design -->
-              <div class="bg-[#99999910] text-white p-4">
+              <div class="bg-[#99999910] text-white p-4 my-2 lg:my-0">
                 <div class="text-center">
                   <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
                     <ion-icon style="font-size: 70px;"  name="pencil-outline"></ion-icon>
@@ -205,7 +205,7 @@
                 </div>
               </div>
               <!-- Consultation -->
-              <div class="bg-[#99999910] text-white p-4">
+              <div class="bg-[#99999910] text-white p-4 my-2 lg:my-0">
                 <div class="text-center">
                   <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
                     <ion-icon style="font-size: 70px;"  name="bulb-outline"></ion-icon>
@@ -226,7 +226,7 @@
     <section data-current-section="s3">
       <div id="section-3" class={$brightnessModelStore === "LIGHT" ? lightBG : darkBG}>
         <!-- Header -->
-        <div class="md:w-4/5 lg:w-3/5 p-4 lg:p-4 lg:px-0 mx-auto content-center">
+        <div class="md:w-4/5 lg:w-3/5 p-4 lg:px-0 mx-auto content-center">
           <h1 class={$brightnessModelStore === "LIGHT" ? lightHeader : darkHeader}>
             <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
               LATEST PROJECTS
@@ -235,7 +235,7 @@
           
         </div>
         <!-- Project -->
-        <div class="md:w-4/5 lg:w-3/5 mx-auto lg:grid lg:grid-cols-2 lg:gap-8 content-center">
+        <div class="md:w-4/5 lg:w-3/5 p-4 mx-auto lg:grid lg:grid-cols-2 lg:gap-8 content-center">
           <!-- Video -->
           <div class="relative content-center">
             <!-- svelte-ignore a11y_media_has_caption -->
@@ -250,7 +250,7 @@
             <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
               <img 
               src="https://ik.imagekit.io/2ax1lblqa/Slice_1__1_-removebg-preview.png?updatedAt=1732343747682" 
-              class="h-20" 
+              class="h-20 mt-8 lg:mt-0" 
               alt="Project Logo">
               <h1 class="text-3xl font-bold text-[#00CF68]">HARP</h1>
               <a aria-label="Meta Quest Website" target="_blank" href={metaQuestWebsiteLink} class="bg-[#ffcb0a]/10 mt-1 p-1 inline-block hover:border-b-2 hover:border-[#ffcb0a] hover:text-[#ffcb0a] transition duration-150">
@@ -272,8 +272,14 @@
             </span>
           </div>
         </div>
-        <!-- TODO: Slider Buttons -->
-         <div class="md:w-4/5 lg:w-3/5 mx-auto mt-8 h-20 bg-[#111]"></div>
+        <!-- View All Button -->
+         <div class="md:w-4/5 lg:w-3/5 p-4 mx-auto my-10 lg:my-0 text-center">
+          <a href="/contact" aria-label="About Us Link" class="text-xs mt-2 mr-2">
+            <span class="w-full lg:w-auto inline-block px-2 py-1.5 border-2 border-[#00CF68] text-[#00CF68] hover:border-[#ffcb0a] hover:text-[#ffcb0a] transition duration-150">
+              VIEW ALL PROJECTS
+            </span>
+          </a>
+        </div>
       </div>
     </section>
 
