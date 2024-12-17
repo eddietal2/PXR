@@ -178,9 +178,14 @@
               <!-- Design -->
               <div class="bg-[#99999910] text-white p-4 my-2 lg:my-0">
                 <div class="text-center">
-                  <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
-                    <ion-icon style="font-size: 70px;"  name="pencil-outline"></ion-icon>
-                  </span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-10 mx-auto" viewBox="0 0 512 512">
+                    <path 
+                        stroke={$brightnessModelStore === 'DARK'? "#ffcb0a" : "#00CF68"}
+                        stroke-linecap="round" 
+                        stroke-linejoin="round" 
+                        stroke-width="32" 
+                        d="M364.13 125.25L87 403l-23 45 44.99-23 277.76-277.13-22.62-22.62zM420.69 68.69l-22.62 22.62 22.62 22.63 22.62-22.63a16 16 0 000-22.62h0a16 16 0 00-22.62 0z"/>
+                    </svg>
                   <h2 class="font-bold text-xl text-left mt-4 text-[#00CF68]">Design</h2>
                   <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
                     <p class="text-left text-sm lg:text-md">Just as an architect meticulously plans before construction begins, Paradigm XR's design team lays the foundation for captivating XR experiences.  We blend UX/UI, interaction, 3D, and graphic design to craft intuitive and visually stunning solutions.
@@ -191,9 +196,15 @@
               <!-- Development -->
               <div class="bg-[#99999910] text-white p-4">
                 <div class="text-center">
-                  <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
-                    <ion-icon style="font-size: 70px;"  name="code-slash-outline"></ion-icon>
-                  </span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-10 mx-auto" viewBox="0 0 512 512">
+                    <path 
+                        fill="none" 
+                        stroke={$brightnessModelStore === 'DARK'? "#ffcb0a" : "#00CF68"}
+                        stroke-linecap="round" 
+                        stroke-linejoin="round"
+                         stroke-width="32" 
+                        d="M160 368L32 256l128-112M352 368l128-112-128-112M304 96l-96 320"/>
+                  </svg>
                   <h2 class="font-bold text-xl text-left mt-4 text-[#00CF68]">Development</h2>
                   <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
                     <p class="text-left text-sm lg:text-md">Just as a skilled construction crew brings an architect's blueprint to life, Paradigm XR's development team builds high-performance applications for iOS, Android, and Meta Quest powered by 
@@ -207,9 +218,22 @@
               <!-- Consultation -->
               <div class="bg-[#99999910] text-white p-4 my-2 lg:my-0">
                 <div class="text-center">
-                  <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
-                    <ion-icon style="font-size: 70px;"  name="bulb-outline"></ion-icon>
-                  </span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-10 mx-auto" viewBox="0 0 512 512">
+                    <path 
+                        d="M304 384v-24c0-29 31.54-56.43 52-76 28.84-27.57 44-64.61 44-108 0-80-63.73-144-144-144a143.6 143.6 0 00-144 144c0 41.84 15.81 81.39 44 108 20.35 19.21 52 46.7 52 76v24M224 480h64M208 432h96M256 384V256" 
+                        stroke={$brightnessModelStore === 'DARK'? "#ffcb0a" : "#00CF68"}
+                        fill="none"
+                        stroke-linecap="round" 
+                        stroke-linejoin="round" 
+                        stroke-width="32"/>
+                    <path 
+                        d="M294 240s-21.51 16-38 16-38-16-38-16" 
+                        stroke={$brightnessModelStore === 'DARK'? "#ffcb0a" : "#00CF68"}
+                        fill="none"
+                        stroke-linecap="round" 
+                        stroke-linejoin="round" 
+                        stroke-width="32"/>
+                  </svg>
                   <h2 class="font-bold text-xl text-left mt-4 text-[#00CF68]">Consultation</h2>
                   <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
                     <p class="text-left text-sm lg:text-md">Facing challenges in your XR journey? Paradigm XR's consultants provide strategic guidance and solutions to overcome obstacles and achieve your project objectives. We'll help you navigate technology choices, optimize development workflows, and ensure your XR experience delivers exceptional results.</p>
