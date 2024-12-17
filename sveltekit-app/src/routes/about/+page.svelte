@@ -52,7 +52,11 @@
           // Active Section, red square
           bullet.innerHTML = `<svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect width="10" height="10" fill="#00CF68"/>
-              </svg>`
+              </svg>`;
+          
+              // Section Animations
+              // s2
+              activeSection == 's2'
         } else {
           // Inactive Section, white circle.
           bullet.innerHTML = `
@@ -66,7 +70,6 @@
     entries.forEach((entry: any) => {
         if (entry.isIntersecting) {
             const activeSection = entry.target.dataset.currentSection;
-            // console.log(activeSection);
             updateNavbar(activeSection);
         }
     });
