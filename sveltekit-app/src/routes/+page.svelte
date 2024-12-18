@@ -416,7 +416,7 @@
   /* Snap Scrolling Indicator */
   #sectionation-lg {
       /* background: #b1b1b153; */
-      z-index: 9999;
+      z-index: 9998;
       width: auto;
       height: auto;
       padding: 0.35em;

@@ -30,8 +30,20 @@
       return currentModel === 'LIGHT' ? 'DARK' : 'LIGHT';
     });
   }
+  let sidemenu: HTMLDivElement;
+  function closeMenu() {
+    console.log('Closing Menu');
+    sidemenu.style.transition = '500ms';
+    sidemenu.style.transform = 'translateX(100%)';
+  }
+  function openMenu() {
+    console.log('Opening Menu');
+    sidemenu.style.transition = '500ms';
+    sidemenu.style.transform = 'translateX(0%)';
+  }
 
   onMount(() => {
+    sidemenu = document.getElementById('sidenav-menu') as HTMLDivElement;
     $brightnessModelStore = getInitialBrightnessModel();
     console.log($brightnessModelStore.valueOf());
 	});
@@ -47,14 +59,14 @@
       <div>
         <a 
         href="/">
-        <img 
-          class="h-16" 
-          alt="PXR Logo"
-          src={$brightnessModelStore === "LIGHT" ? 
-            "https://ik.imagekit.io/je4p51xox/pxr_logo_light.png?updatedAt=1733432273643"
-            : 
-            "https://ik.imagekit.io/je4p51xox/pxr_logo_dark.png?updatedAt=1733432273575"}>
-      </a>
+          <img 
+            class="h-16" 
+            alt="PXR Logo"
+            src={$brightnessModelStore === "LIGHT" ? 
+              "https://ik.imagekit.io/je4p51xox/pxr_logo_light.png?updatedAt=1733432273643"
+              : 
+              "https://ik.imagekit.io/je4p51xox/pxr_logo_dark.png?updatedAt=1733432273575"}>
+        </a>
       </div>
       <!-- Links -->
       <div class="text-right content-center hidden md:inline-block">
@@ -104,7 +116,9 @@
         </div>
       </div>
       <!-- Mobile Hamburger Menu -->
-      <div class="inline-block md:hidden text-right content-center">
+      <!-- svelte-ignore a11y_click_events_have_key_events -->
+      <!-- svelte-ignore a11y_no_static_element_interactions -->
+      <div onclick={openMenu} class="inline-block md:hidden text-right content-center">
         <svg xmlns="http://www.w3.org/2000/svg" class="float-right h-8" viewBox="0 0 512 512">
           <path 
             fill={$brightnessModelStore === 'DARK'? "#ffcb0a" : "#11111150"}
@@ -112,6 +126,64 @@
         </svg>
       </div>
     </div>
+  </div>
+
+  <!-- Sidenav -->
+  <div
+    id="sidenav-menu"
+    style="z-index: 9999;"
+    class="absolute right-0 flex h-[calc(100vh)] w-full max-w-[20rem] flex-col rounded-xl bg-white bg-clip-border p-4 text-gray-700 shadow-xl shadow-blue-gray-900/5">
+    <div class="p-4 mb-2">
+      <a 
+          href="/">
+            <img 
+              class="h-24" 
+              alt="PXR Logo"
+              src="https://ik.imagekit.io/je4p51xox/pxr_logo_light.png?updatedAt=1733432273643">
+          </a>
+    </div>
+    <nav class="flex min-w-[240px] flex-col gap-1 p-2 font-sans text-base font-normal text-blue-gray-700">
+      <div role="button"
+        class="flex items-center w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
+        <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
+          <a class={$page.url.pathname === '/' ? activeLink : inactiveLink} href="/" aria-label="Home Link">
+            <span class="text-xl">HOME</span>
+          </a>
+        </span>
+      </div>
+      <div role="button"
+        class="flex items-center w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
+        <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
+          <a class={$page.url.pathname === '/process' ? activeLink : inactiveLink} href="/process" aria-label="Home Link">
+            <span class="text-xl">PROCESS</span>
+          </a>
+        </span>
+      </div>
+      <div role="button"
+        class="flex items-center w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
+        <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
+          <a class={$page.url.pathname === '/projects' ? activeLink : inactiveLink} href="/projects" aria-label="Home Link">
+            <span class="text-xl">PROJECTS</span>
+          </a>
+        </span>
+      </div>
+      <div role="button"
+        class="flex items-center w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
+        <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
+          <a class={$page.url.pathname === '/about' ? activeLink : inactiveLink} href="/about" aria-label="Home Link">
+            <span class="text-xl">ABOUT US</span>
+          </a>
+        </span>
+      </div>
+      <!-- <div class="my-10"></div> -->
+      <!-- svelte-ignore a11y_interactive_supports_focus -->
+      <!-- svelte-ignore a11y_click_events_have_key_events -->
+      <div role="button"
+        onclick={closeMenu} 
+        class="absolute bottom-10 flex items-center w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
+        <span class="text-xl text-red-900">CLOSE</span>
+      </div>
+    </nav>
   </div>
 	{@render children()}
 </main>
