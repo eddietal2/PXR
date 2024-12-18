@@ -94,7 +94,7 @@
       </a>
     </li>
     <li>
-      <a href="#section-4" aria-label="Fourth Section">
+      <a href="#footer" aria-label="Fourth Section">
         <div class="nav-bullet" data-current-section="s4"></div>
       </a>
     </li>
@@ -158,7 +158,7 @@
                   Partner with Paradigm XR to turn your XR dreams into reality. We'll help you take your ideas from concept to a functional MVP [minimum viable product], with ongoing development services to scale your project as needed.
                 </span>
             </p>
-            <a href="#section-4" 
+            <a href="#footer" 
               class="block text-center ml-6 mt-4 text-[#fff] border-2 border-[#fff] p-2 font-bold hover:bg-[#00CF6820] hover:text-[#fff]">CONTACT US
             </a>
           </div>
@@ -320,7 +320,7 @@
 
     <!-- Contact Us -->
     <section data-current-section="s4">
-      <div id="section-4" class={$brightnessModelStore === "LIGHT" ? lightBGFooter : darkBGFooter}>
+      <div id="footer" class={$brightnessModelStore === "LIGHT" ? lightBGFooter : darkBGFooter}>
         <div class="md:w-4/5 lg:w-full mx-auto mb-8">
         <!-- Header -->
         <div class="text-center content-center">
@@ -472,7 +472,7 @@
   #section-1,
   #section-2,
   #section-3,
-  #section-4
+  #footer
    {
       width: 100%;
       height: 100vh;
@@ -482,14 +482,14 @@
       #section-1,
       #section-2,
       #section-3,
-      #section-4
+      #footer
        {
           scroll-snap-type: none;
           scroll-snap-align: none;
           height: 100%;
       }
   
-      #section-4 {
+      #footer {
           padding: 10em 0 5em 0;
       }
   }

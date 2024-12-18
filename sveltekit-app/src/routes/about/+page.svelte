@@ -97,7 +97,7 @@
       </a>
     </li>
     <li>
-      <a href="#section-3" aria-label="Third Section">
+      <a href="#footer" aria-label="Third Section">
         <div class="nav-bullet" data-current-section="s3"></div>
       </a>
     </li>
@@ -238,7 +238,7 @@
 
     <!-- Contact Us -->
     <section data-current-section="s4">
-      <div id="section-3" class={$brightnessModelStore === "LIGHT" ? lightBGFooter : darkBGFooter}>
+      <div id="footer" class={$brightnessModelStore === "LIGHT" ? lightBGFooter : darkBGFooter}>
         <div class="md:w-4/5 lg:w-full mx-auto mb-8">
         <!-- Header -->
         <div class="text-center content-center mx-4 sm:mx-0">
@@ -367,7 +367,7 @@
   }
   #section-1,
   #section-2,
-  #section-3,
+  #footer,
   #section-4,
   #section-5,
   #section-6,
@@ -382,7 +382,7 @@
       #wrapper,
       #section-1,
       #section-2,
-      #section-3,
+      #footer,
       #section-4,
       #section-5,
       #section-6,

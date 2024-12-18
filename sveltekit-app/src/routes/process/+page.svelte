@@ -105,7 +105,7 @@
           </a>
         </li>
         <li>
-            <a href="#section-8" aria-label="Eigth Section">
+            <a href="#footer" aria-label="Eigth Section">
             <div class="nav-bullet" data-current-section="s8"></div>
           </a>
         </li>
@@ -499,7 +499,7 @@
 
     <!-- Contact Us -->
     <section data-current-section="s8">
-      <div id="section-8" class={$brightnessModelStore === "LIGHT" ? lightBGFooter : darkBGFooter}>
+      <div id="footer" class={$brightnessModelStore === "LIGHT" ? lightBGFooter : darkBGFooter}>
         <div class="md:w-4/5 lg:w-full mx-auto mb-8">
         <!-- Header -->
         <div class="text-center content-center mx-4 sm:mx-0">
@@ -633,7 +633,7 @@
   #section-5,
   #section-6,
   #section-7,
-  #section-8
+  #footer
    {
       width: 100%;
       height: 100vh;
@@ -647,7 +647,7 @@
       #section-5,
       #section-6,
       #section-7,
-      #section-8   {
+      #footer   {
           scroll-snap-type: none;
           scroll-snap-align: none;
           height: 100vh;

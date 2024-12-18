@@ -84,8 +84,8 @@
         <a class={$page.url.pathname === '/about' ? activeLink : inactiveLink} href="/about" aria-label="About Us Link">
           ABOUT US
         </a>
-        <a class={$page.url.pathname === '/contact' ? activeLink : inactiveLink} href="/contact" aria-label="About Us Link">
-          <span class="px-1 py-0.5 border-2 border-[#00CF68] text-[#00CF68] hover:border-[#ffcb0a] hover:text-[#ffcb0a] transition duration-150">
+        <a href="#footer" aria-label="Contact Us Link">
+          <span class="text-[0.75em] px-1 py-0.5 border-2 border-[#00CF68] text-[#00CF68] hover:border-[#ffcb0a] hover:text-[#ffcb0a] transition duration-150">
             FREE CONSULTATION
           </span>
         </a>
