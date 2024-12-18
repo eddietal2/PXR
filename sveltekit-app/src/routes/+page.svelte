@@ -9,7 +9,7 @@
   // Light Mode
   let lightText = 'text-black transition duration-150';
   let lightHeader = 'p-1 text-[#fff] bg-[#99999910] text-2xl font-bold transition duration-150';
-  let lightBG = 'bg-[#fff] content-center transition duration-150';
+  let lightBG = 'bg-[#fff] content-center';
   let lightBGFooter = "bg-[#fff] content-center transition duration-150";
   let lightButton = 'bg-[#00000020] text-[#00CF68] hover:bg-[#00CF68] hover:text-[#fff] transition duration-1 py-1 px-4';
 	let lightInput = 'text-[#111]';
@@ -17,7 +17,7 @@
   // Dark Mode
   let darkText = 'text-white transition duration-150';
   let darkHeader = 'p-1 text-[#fff] bg-[#99999910] text-2xl font-bold transition duration-150';
-  let darkBG = 'bg-[#222] content-center transition duration-150';
+  let darkBG = 'bg-[#222] content-center';
   let darkBGFooter = "bg-[#111] content-center transition duration-150";
   let darkButton = 'bg-[#ffffff20] text-[#00CF68] hover:bg-[#00CF68] hover:text-[#fff] transition duration-1 py-1 px-4';
 	let darkInput = 'text-[#fff]';
@@ -74,9 +74,9 @@
   });
 </script>
 
-<main>
+<main class={$brightnessModelStore === "LIGHT" ? darkBG : lightBG}>
  <!-- Section Nav (Desktop) -->
- <nav id="sectionation-lg" class={$brightnessModelStore === "LIGHT" ? darkBG : lightBG}>
+ <nav id="sectionation-lg">
     <ul >
       <li>
         <a href="#section-1" aria-label="First Section">
@@ -101,7 +101,7 @@
     </ul>
 </nav>
 
-  <div id="wrapper">
+  <div id="wrapper" class={$brightnessModelStore === "LIGHT" ? darkBG : lightBG}>
 
     <!-- Landing Intro -->
     <section data-current-section="s1">

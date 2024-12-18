@@ -82,7 +82,7 @@
   });
 </script>
 
-<main>
+<main class={$brightnessModelStore === "LIGHT" ? lightBG : darkBG}>
  <!-- Section Nav (Desktop) -->
  <nav id="sectionation-lg" class={$brightnessModelStore === "LIGHT" ? darkBG : lightBG}>
   <ul>
@@ -109,7 +109,7 @@
   </ul>
 </nav>
 
-  <div id="wrapper">
+  <div id="wrapper" class={$brightnessModelStore === "LIGHT" ? lightBG : darkBG}>
     <!-- How We Do Intro -->
     <section data-current-section="s1">
       <div id="section-1" class={$brightnessModelStore === "LIGHT" ? lightBG : darkBG}>
