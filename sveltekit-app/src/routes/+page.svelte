@@ -76,7 +76,7 @@
 
 <main class={$brightnessModelStore === "LIGHT" ? darkBG : lightBG}>
  <!-- Section Nav (Desktop) -->
- <nav id="sectionation-lg">
+ <nav id="sectionation-lg" class={$brightnessModelStore === "LIGHT" ? darkBG : lightBG}>
     <ul >
       <li>
         <a href="#section-1" aria-label="First Section">
@@ -158,9 +158,6 @@
                   Partner with Paradigm XR to turn your XR dreams into reality. We'll help you take your ideas from concept to a functional MVP [minimum viable product], with ongoing development services to scale your project as needed.
                 </span>
             </p>
-            <a href="#footer" 
-              class="block text-center ml-6 mt-4 text-[#fff] border-2 border-[#fff] p-2 font-bold hover:bg-[#00CF6820] hover:text-[#fff]">CONTACT US
-            </a>
           </div>
         </div>
       </div>
@@ -176,11 +173,7 @@
                 <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
                   OUR SERVICES
                 </span>
-                <a href="/contact" aria-label="About Us Link" class="float-right text-xs mt-2 mr-2">
-                  <span class="px-1 py-0.5 border-2 border-[#00CF68] text-[#00CF68] hover:border-[#ffcb0a] hover:text-[#ffcb0a] transition duration-150">
-                    FREE CONSULTATION
-                  </span>
-                </a>
+                
               </h1>
           </div>
           <!-- Services -->

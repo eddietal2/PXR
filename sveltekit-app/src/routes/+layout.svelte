@@ -50,7 +50,6 @@
 
 </script>
 
-
 <main>
   <!-- Navbar -->
   <div class={$brightnessModelStore === "LIGHT" ? lightNav : darkNav}>
@@ -143,7 +142,10 @@
           </a>
     </div>
     <nav class="flex min-w-[240px] flex-col gap-1 p-2 font-sans text-base font-normal text-blue-gray-700">
+      <!-- svelte-ignore a11y_interactive_supports_focus -->
+      <!-- svelte-ignore a11y_click_events_have_key_events -->
       <div role="button"
+        onclick={closeMenu} 
         class="flex items-center w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
         <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
           <a class={$page.url.pathname === '/' ? activeLink : inactiveLink} href="/" aria-label="Home Link">
@@ -151,7 +153,10 @@
           </a>
         </span>
       </div>
+      <!-- svelte-ignore a11y_interactive_supports_focus -->
+      <!-- svelte-ignore a11y_click_events_have_key_events -->
       <div role="button"
+        onclick={closeMenu} 
         class="flex items-center w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
         <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
           <a class={$page.url.pathname === '/process' ? activeLink : inactiveLink} href="/process" aria-label="Home Link">
@@ -159,7 +164,10 @@
           </a>
         </span>
       </div>
+      <!-- svelte-ignore a11y_interactive_supports_focus -->
+      <!-- svelte-ignore a11y_click_events_have_key_events -->
       <div role="button"
+        onclick={closeMenu} 
         class="flex items-center w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
         <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
           <a class={$page.url.pathname === '/projects' ? activeLink : inactiveLink} href="/projects" aria-label="Home Link">
@@ -167,7 +175,10 @@
           </a>
         </span>
       </div>
+      <!-- svelte-ignore a11y_interactive_supports_focus -->
+      <!-- svelte-ignore a11y_click_events_have_key_events -->
       <div role="button"
+        onclick={closeMenu} 
         class="flex items-center w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
         <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
           <a class={$page.url.pathname === '/about' ? activeLink : inactiveLink} href="/about" aria-label="Home Link">
