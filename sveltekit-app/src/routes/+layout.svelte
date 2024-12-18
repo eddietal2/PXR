@@ -132,7 +132,7 @@
   <div
     id="sidenav-menu"
     style="z-index: 9999;"
-    class="absolute right-0 flex h-[calc(100vh)] w-full max-w-[20rem] flex-col rounded-xl bg-white bg-clip-border p-4 text-gray-700 shadow-xl shadow-blue-gray-900/5">
+    class="absolute translate-x-full right-0 flex h-[calc(100vh)] w-full max-w-[20rem] flex-col rounded-xl bg-white bg-clip-border p-4 text-gray-700 shadow-xl shadow-blue-gray-900/5">
     <div class="p-4 mb-2">
       <a 
           href="/">

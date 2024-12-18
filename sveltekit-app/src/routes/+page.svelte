@@ -309,7 +309,7 @@
         </div>
         <!-- View All Button -->
          <div class="md:w-4/5 lg:w-3/5 p-4 mx-auto my-10 lg:my-0 text-center">
-          <a href="/contact" aria-label="About Us Link" class="text-xs mt-2 mr-2">
+          <a href="/projects" aria-label="About Us Link" class="text-xs mt-2 mr-2">
             <span class="w-full lg:w-auto inline-block px-2 py-1.5 border-2 border-[#00CF68] text-[#00CF68] hover:border-[#ffcb0a] hover:text-[#ffcb0a] transition duration-150">
               VIEW ALL PROJECTS
             </span>
