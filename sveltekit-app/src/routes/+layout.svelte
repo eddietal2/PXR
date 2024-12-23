@@ -83,7 +83,7 @@
         <a class={$page.url.pathname === '/about' ? activeLink : inactiveLink} href="/about" aria-label="About Us Link">
           ABOUT US
         </a>
-        <a href="#footer" aria-label="Contact Us Link">
+        <a href="/contact" aria-label="Contact Us Link">
           <span class="text-[0.75em] px-1 py-0.5 border-2 border-[#00CF68] text-[#00CF68] hover:border-[#ffcb0a] hover:text-[#ffcb0a] transition duration-150">
             FREE CONSULTATION
           </span>
@@ -142,6 +142,19 @@
           </a>
     </div>
     <nav class="flex min-w-[240px] flex-col gap-1 p-2 font-sans text-base font-normal text-blue-gray-700">
+      <!-- svelte-ignore a11y_interactive_supports_focus -->
+      <!-- svelte-ignore a11y_click_events_have_key_events -->
+      <div role="button"
+        onclick={closeMenu} 
+        class="flex items-center w-full p-3 leading-tight transition-all rounded-lg outline-none text-start hover:bg-blue-gray-50 hover:bg-opacity-80 hover:text-blue-gray-900 focus:bg-blue-gray-50 focus:bg-opacity-80 focus:text-blue-gray-900 active:bg-blue-gray-50 active:bg-opacity-80 active:text-blue-gray-900">
+        <span class={$brightnessModelStore === "LIGHT" ? lightText : darkText}>
+        <a href="/contact" aria-label="Contact Us Link">
+          <span class="text-xl px-1 py-0.5 border-2 border-[#00CF68] text-[#00CF68] hover:border-[#ffcb0a] hover:text-[#ffcb0a] transition duration-150">
+            FREE CONSULTATION
+          </span>
+        </a>
+        </span>
+      </div>
       <!-- svelte-ignore a11y_interactive_supports_focus -->
       <!-- svelte-ignore a11y_click_events_have_key_events -->
       <div role="button"
